@@ -29,6 +29,6 @@
 
 ![지옥에서 돌아온 node](/images/home/node-hell.png)
 
-## 0 == "0"
+## 짜스 밈
 
-![0=="0"](/images/home/0-is-true.png)
+![0=="0"](/images/home/js-meme.png)
