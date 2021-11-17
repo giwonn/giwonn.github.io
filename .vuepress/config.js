@@ -1,6 +1,4 @@
 const getDir = require('./getDir');
-const dayjs = require('dayjs');
-require('dayjs/locale/ko');
 
 module.exports = {
   head: [
@@ -51,8 +49,9 @@ module.exports = {
       '@vuepress/last-updated',
       {
         transformer: (timestamp, lang) => {
-          dayjs.locale(lang);
-          return dayjs(timestamp).format('YYYY.MM.DD A h:mm');
+          const dayjs = require('dayjs');
+          dayjs.locale('ko-KR');
+          return dayjs(timestamp).format('YYYY/MM/DD HH:mm');
         },
       },
     ],
