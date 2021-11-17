@@ -25,12 +25,12 @@ module.exports = {
     },
   },
   title: `기원's Study(ing)`,
-  description: 'Just playing around',
+  description: '기원이의 기술 블로그?',
   themeConfig: {
     smoothScroll: true,
     lastUpdated: '최근수정일',
     nav: [
-      { text: 'TIL', link: ['/TIL/'] },
+      { text: 'TIL', link: '/TIL/' },
       { text: '개발노트', link: '/devnote/' },
       { text: 'GitHub', link: 'https://github.com/giwonn' },
     ],
@@ -57,6 +57,6 @@ module.exports = {
       },
     ],
     ['vuepress-plugin-code-copy'],
-    { sitemap: { hostname: 'https://giwonn.github.io/TIL/' } },
+    { sitemap: { hostname: 'https://giwonn.github.io/' } },
   ],
 };
