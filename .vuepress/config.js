@@ -36,6 +36,7 @@ module.exports = {
     ],
     sidebar: {
       '/devnote/': getDir('/devnote/'),
+      '/': getDir('/'),
       '/': getDir('/TIL/'),
     },
     searchPlaceholder: '검색해주세요...',
@@ -56,6 +57,6 @@ module.exports = {
       },
     ],
     ['vuepress-plugin-code-copy'],
-    { sitemap: { hostname: 'https://giwonn.github.io/' } },
+    ['sitemap', { hostname: 'https://giwonn.github.io/' }],
   ],
 };
