@@ -50,8 +50,8 @@ module.exports = {
       {
         transformer: (timestamp, lang) => {
           const dayjs = require('dayjs');
-          dayjs.locale('ko-KR');
-          return dayjs(timestamp).format('YYYY/MM/DD HH:mm');
+          require('dayjs/locale/ko');
+          return dayjs(timestamp).format('YYYY. MM. DD. HH:mm');
         },
       },
     ],
