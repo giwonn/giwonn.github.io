@@ -8,14 +8,14 @@ module.exports = {
       'script',
       {
         async: true,
-        src: 'https://www.googletagmanager.com/gtag/js?id=G-ETXW1PYBQK',
+        src: 'https://www.googletagmanager.com/gtag/js?id=G-BF2TS7D4KC',
       },
     ],
     [
       'script',
       {},
       [
-        "window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-ETXW1PYBQK');",
+        "window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-BF2TS7D4KC');",
       ],
     ],
   ],
@@ -36,7 +36,6 @@ module.exports = {
     ],
     sidebar: {
       '/devnote/': getDir('/devnote/'),
-      '/': getDir('/'),
       '/': getDir('/TIL/'),
     },
     searchPlaceholder: '검색해주세요...',
