@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>9장. 타입변환과 단축평가 | 기원&#39;s Study(ing)</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <script async="true" src="https://www.googletagmanager.com/gtag/js?id=G-ETXW1PYBQK"></script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-ETXW1PYBQK');</script>
+    <meta name="description" content="기원이의 기술 블로그?">
+    
+    <link rel="preload" href="/assets/css/0.styles.1d7ddbae.css" as="style"><link rel="preload" href="/assets/js/app.fcc90013.js" as="script"><link rel="preload" href="/assets/js/9.d42a2257.js" as="script"><link rel="preload" href="/assets/js/2.85121300.js" as="script"><link rel="preload" href="/assets/js/50.e162ff7a.js" as="script"><link rel="prefetch" href="/assets/js/10.66006681.js"><link rel="prefetch" href="/assets/js/11.967bcd69.js"><link rel="prefetch" href="/assets/js/12.ddc0db73.js"><link rel="prefetch" href="/assets/js/13.229203bf.js"><link rel="prefetch" href="/assets/js/14.5e1b8e31.js"><link rel="prefetch" href="/assets/js/15.354b7aea.js"><link rel="prefetch" href="/assets/js/16.b211b50a.js"><link rel="prefetch" href="/assets/js/17.c2e92e96.js"><link rel="prefetch" href="/assets/js/18.9305fc61.js"><link rel="prefetch" href="/assets/js/19.14d3c6f5.js"><link rel="prefetch" href="/assets/js/20.778d3402.js"><link rel="prefetch" href="/assets/js/21.36df9413.js"><link rel="prefetch" href="/assets/js/22.4e1cd1e3.js"><link rel="prefetch" href="/assets/js/23.a7a4eb41.js"><link rel="prefetch" href="/assets/js/24.51a21d60.js"><link rel="prefetch" href="/assets/js/25.694511f1.js"><link rel="prefetch" href="/assets/js/26.f5f50792.js"><link rel="prefetch" href="/assets/js/27.efdc18c6.js"><link rel="prefetch" href="/assets/js/28.be486650.js"><link rel="prefetch" href="/assets/js/29.f2390283.js"><link rel="prefetch" href="/assets/js/3.b1fc7e97.js"><link rel="prefetch" href="/assets/js/30.383a1c79.js"><link rel="prefetch" href="/assets/js/31.690bde23.js"><link rel="prefetch" href="/assets/js/32.16399714.js"><link rel="prefetch" href="/assets/js/33.123e1e3e.js"><link rel="prefetch" href="/assets/js/34.6d1f132b.js"><link rel="prefetch" href="/assets/js/35.662a960c.js"><link rel="prefetch" href="/assets/js/36.b5d30463.js"><link rel="prefetch" href="/assets/js/37.5fa97ff6.js"><link rel="prefetch" href="/assets/js/38.8bd10ec9.js"><link rel="prefetch" href="/assets/js/39.e7a593c7.js"><link rel="prefetch" href="/assets/js/4.56082774.js"><link rel="prefetch" href="/assets/js/40.67ee3ddf.js"><link rel="prefetch" href="/assets/js/41.0c60d86b.js"><link rel="prefetch" href="/assets/js/42.96937b8f.js"><link rel="prefetch" href="/assets/js/43.be94391f.js"><link rel="prefetch" href="/assets/js/44.ffb39345.js"><link rel="prefetch" href="/assets/js/45.82f20678.js"><link rel="prefetch" href="/assets/js/46.47c5c6af.js"><link rel="prefetch" href="/assets/js/47.68fc3979.js"><link rel="prefetch" href="/assets/js/48.00207237.js"><link rel="prefetch" href="/assets/js/49.cc27f274.js"><link rel="prefetch" href="/assets/js/5.5e33cd57.js"><link rel="prefetch" href="/assets/js/51.8a787337.js"><link rel="prefetch" href="/assets/js/52.397a7958.js"><link rel="prefetch" href="/assets/js/53.4c828c7e.js"><link rel="prefetch" href="/assets/js/54.9a6a193d.js"><link rel="prefetch" href="/assets/js/55.18ecd1ec.js"><link rel="prefetch" href="/assets/js/56.68887ba2.js"><link rel="prefetch" href="/assets/js/57.3673b39b.js"><link rel="prefetch" href="/assets/js/58.a704c520.js"><link rel="prefetch" href="/assets/js/59.ae984327.js"><link rel="prefetch" href="/assets/js/6.b34e1708.js"><link rel="prefetch" href="/assets/js/60.17ff4206.js"><link rel="prefetch" href="/assets/js/61.b5765e2d.js"><link rel="prefetch" href="/assets/js/62.b84eeba6.js"><link rel="prefetch" href="/assets/js/63.fce75072.js"><link rel="prefetch" href="/assets/js/64.45f3c5c6.js"><link rel="prefetch" href="/assets/js/65.66f9e403.js"><link rel="prefetch" href="/assets/js/66.e8d186f1.js"><link rel="prefetch" href="/assets/js/67.85eb105d.js"><link rel="prefetch" href="/assets/js/68.78209be1.js"><link rel="prefetch" href="/assets/js/69.318bb7c6.js"><link rel="prefetch" href="/assets/js/7.aa891418.js"><link rel="prefetch" href="/assets/js/70.bbcda126.js"><link rel="prefetch" href="/assets/js/71.65b04b95.js"><link rel="prefetch" href="/assets/js/72.54eb0519.js"><link rel="prefetch" href="/assets/js/73.aa22a64f.js"><link rel="prefetch" href="/assets/js/74.3ad79c81.js"><link rel="prefetch" href="/assets/js/75.0e7fb979.js"><link rel="prefetch" href="/assets/js/76.21fedfef.js"><link rel="prefetch" href="/assets/js/77.eef4253b.js"><link rel="prefetch" href="/assets/js/78.1aecf22c.js"><link rel="prefetch" href="/assets/js/79.bea0c0b2.js"><link rel="prefetch" href="/assets/js/8.3bbd4f5e.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.1d7ddbae.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">기원's Study(ing)</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/TIL/" class="nav-link router-link-active">
+  TIL
+</a></div><div class="nav-item"><a href="/devnote/" class="nav-link">
+  개발노트
+</a></div><div class="nav-item"><a href="https://github.com/giwonn" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/TIL/" class="nav-link router-link-active">
+  TIL
+</a></div><div class="nav-item"><a href="/devnote/" class="nav-link">
+  개발노트
+</a></div><div class="nav-item"><a href="https://github.com/giwonn" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>APP - Android</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>App - Flutter</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Book - 오브젝트</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>CS - Algorithm</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>CS - Design Pattern</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>CS - Network</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>DB - GraphQL</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>DB - JPA</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>ETC - Docker</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>ETC - 정보처리기사</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>FW - Flutter</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>FW - React</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>FW - Vue</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Git</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Lang - Dart</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Lang - Javascript</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/TIL/Lang - Javascript/01_2장 자바스크립트란.html" class="sidebar-link">1,2장. 자바스크립트란?</a></li><li><a href="/TIL/Lang - Javascript/03_4장 변수.html" class="sidebar-link">3,4장. 변수</a></li><li><a href="/TIL/Lang - Javascript/05_6장 표현식, 데이터타입.html" class="sidebar-link">5,6장. 표현식과 데이터 타입</a></li><li><a href="/TIL/Lang - Javascript/07_8장 연산자,제어문.html" class="sidebar-link">7,8장. 연산자와 제어문</a></li><li><a href="/TIL/Lang - Javascript/09장 타입변환, 단축평가.html" class="active sidebar-link">9장. 타입변환과 단축평가</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/TIL/Lang - Javascript/09장 타입변환, 단축평가.html#타입-변환" class="sidebar-link">타입 변환</a></li><li class="sidebar-sub-header"><a href="/TIL/Lang - Javascript/09장 타입변환, 단축평가.html#명시적-타입-변환" class="sidebar-link">명시적 타입 변환</a></li><li class="sidebar-sub-header"><a href="/TIL/Lang - Javascript/09장 타입변환, 단축평가.html#단축-평가" class="sidebar-link">단축 평가</a></li></ul></li><li><a href="/TIL/Lang - Javascript/10장 객체 리터럴.html" class="sidebar-link">10장. 객체 리터럴</a></li><li><a href="/TIL/Lang - Javascript/11장 원시값과 객체의 비교.html" class="sidebar-link">11장. 원시값과 객체의 비교</a></li><li><a href="/TIL/Lang - Javascript/12장 함수.html" class="sidebar-link">12장. 함수란?</a></li><li><a href="/TIL/Lang - Javascript/13장 스코프.html" class="sidebar-link">13장. 스코프란?</a></li><li><a href="/TIL/Lang - Javascript/14장 전역변수의 문제점.html" class="sidebar-link">14장. 전역 변수의 문제점</a></li><li><a href="/TIL/Lang - Javascript/15장 let, const 키워드와 블록 레벨 스코프.html" class="sidebar-link">15장. let, const키워드와 블록 레벨 스코프</a></li><li><a href="/TIL/Lang - Javascript/16장 프로퍼티 어트리뷰트.html" class="sidebar-link">16장. 프로퍼티 어트리뷰트</a></li><li><a href="/TIL/Lang - Javascript/FrontEnd에서의 에러 핸들링.html" class="sidebar-link">FrontEnd에서의 에러 핸들링</a></li><li><a href="/TIL/Lang - Javascript/Javascript, 웹앱, Node.html" class="sidebar-link">1. Javascript 변천사</a></li><li><a href="/TIL/Lang - Javascript/Prototype 간단 요약.html" class="sidebar-link">Prototype 간단 요약</a></li><li><a href="/TIL/Lang - Javascript/WebAssembly에 대해서.html" class="sidebar-link">WebAssembly 란?</a></li><li><a href="/TIL/Lang - Javascript/jQuery 메서드 정리.html" class="sidebar-link">jQuery 메서드 정리</a></li><li><a href="/TIL/Lang - Javascript/jQuery가 처한 상황에 대해서.html" class="sidebar-link">jQuery 관련 이야기</a></li><li><a href="/TIL/Lang - Javascript/문서와 리소스 로딩.html" class="sidebar-link">문서와 리소스 로딩 (defer, async)</a></li><li><a href="/TIL/Lang - Javascript/웹 스토리지.html" class="sidebar-link">웹 스토리지 (Web Storage)</a></li><li><a href="/TIL/Lang - Javascript/이벤트 위임.html" class="sidebar-link">이벤트 위임 (Event Delegation)</a></li><li><a href="/TIL/Lang - Javascript/자바스크립트 변천사.html" class="sidebar-link">Javascript 변천사</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Lang - Python</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>MacOS</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Node.js</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="_9장-타입변환과-단축평가"><a href="#_9장-타입변환과-단축평가" class="header-anchor">#</a> 9장. 타입변환과 단축평가</h1> <h2 id="타입-변환"><a href="#타입-변환" class="header-anchor">#</a> 타입 변환</h2> <hr> <ul><li>명시적 타입 변환 : 개발자가 의도적으로 값의 타입을 변환하는 것 (=타입 캐스팅)</li> <li>암묵적 타입 변환 : 자바스크립트 엔진에 의해 암묵적으로 타입이 변환하는 것 (=타입 강제 변환)</li></ul> <p>ex) 템플릿 리터럴은 표현식의 평과 결과를 문자열 타입으로 암묵적 타입 변환한다.</p> <div class="language-jsx extra-class"><pre class="language-jsx"><code><span class="token number">0</span> <span class="token operator">+</span>
+  <span class="token string">''</span> <span class="token operator">-</span> <span class="token comment">// -&gt; &quot;0&quot;</span>
+  <span class="token number">0</span> <span class="token operator">+</span>
+  <span class="token string">''</span><span class="token punctuation">;</span> <span class="token comment">// -&gt; &quot;0&quot;</span>
+<span class="token number">1</span> <span class="token operator">+</span>
+  <span class="token string">''</span> <span class="token operator">-</span> <span class="token comment">// -&gt; &quot;1&quot;</span>
+  <span class="token number">1</span> <span class="token operator">+</span>
+  <span class="token string">''</span><span class="token punctuation">;</span> <span class="token comment">// -&gt; &quot;-1&quot;</span>
+<span class="token number">NaN</span> <span class="token operator">+</span> <span class="token string">''</span><span class="token punctuation">;</span> <span class="token comment">// -&gt; &quot;NaN&quot;</span>
+<span class="token number">Infinity</span> <span class="token operator">+</span>
+  <span class="token string">''</span> <span class="token operator">-</span> <span class="token comment">// -&gt; &quot;Infinity&quot;</span>
+  <span class="token number">Infinity</span> <span class="token operator">+</span>
+  <span class="token string">''</span><span class="token punctuation">;</span> <span class="token comment">// -&gt; &quot;-Infinity&quot;</span>
+
+<span class="token boolean">true</span> <span class="token operator">+</span> <span class="token string">''</span><span class="token punctuation">;</span> <span class="token comment">// &quot;true&quot;</span>
+
+<span class="token keyword">null</span> <span class="token operator">+</span> <span class="token string">''</span><span class="token punctuation">;</span> <span class="token comment">// &quot;null&quot;</span>
+
+<span class="token keyword">undefined</span> <span class="token operator">+</span>
+  <span class="token string">''</span><span class="token punctuation">(</span>
+    <span class="token comment">// &quot;undefined&quot;</span>
+
+    <span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">)</span> <span class="token operator">+</span>
+  <span class="token string">''</span><span class="token punctuation">(</span>
+    <span class="token comment">// TypeError</span>
+
+    <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token punctuation">)</span> <span class="token operator">+</span>
+  <span class="token string">''</span><span class="token punctuation">;</span> <span class="token comment">// &quot;[object Object]&quot;</span>
+Math <span class="token operator">+</span>
+  <span class="token string">''</span><span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token comment">// &quot;[object Math]&quot;</span>
+  <span class="token string">''</span><span class="token punctuation">(</span>
+    <span class="token comment">// &quot;10,20&quot;</span>
+    <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token punctuation">)</span> <span class="token operator">+</span>
+  <span class="token string">''</span><span class="token punctuation">;</span> <span class="token comment">// &quot;function(){}&quot;</span>
+Array <span class="token operator">+</span> <span class="token string">''</span><span class="token punctuation">;</span> <span class="token comment">// &quot;function Array() { [native code] }&quot;</span>
+</code></pre></div><ul><li>숫자 타입 변환 : 산술 연산자 표현식을 평가할 때 숫자 타입이 아니면 암묵적으로 숫자 타입으로 변환한다.</li></ul> <div class="language-jsx extra-class"><pre class="language-jsx"><code><span class="token number">1</span> <span class="token operator">-</span> <span class="token string">'1'</span><span class="token punctuation">;</span> <span class="token comment">// 0</span>
+<span class="token number">1</span> <span class="token operator">*</span> <span class="token string">'10'</span><span class="token punctuation">;</span> <span class="token comment">// 10</span>
+<span class="token number">1</span> <span class="token operator">/</span> <span class="token string">'one'</span><span class="token punctuation">;</span> <span class="token comment">// NaN</span>
+</code></pre></div><ul><li>boolean 타입으로 변환 : 아래의 false값들 외에는 전부 true다.</li></ul> <div class="language-jsx extra-class"><pre class="language-jsx"><code><span class="token comment">// false로 평가되는 값들</span>
+<span class="token boolean">false</span><span class="token punctuation">;</span>
+<span class="token keyword">undefined</span><span class="token punctuation">;</span>
+<span class="token keyword">null</span><span class="token punctuation">;</span>
+<span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token number">NaN</span><span class="token punctuation">;</span>
+<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 빈 문자열</span>
+</code></pre></div><h2 id="명시적-타입-변환"><a href="#명시적-타입-변환" class="header-anchor">#</a> 명시적 타입 변환</h2> <ul><li><p>표준 빌트인 생성자 함수 : 객체를 생성하기 위한 함수이며 new 연산자와 함께 호출한다.</p></li> <li><p>표준 빌트인 메서드 : 빌트인 객체의 메서드 (21장에서 자세히!)</p></li> <li><p>문자열 타입으로 변환</p></li></ul> <div class="language-jsx extra-class"><pre class="language-jsx"><code><span class="token comment">// String 생성자 함수를 new 연산자 없이 호출하는 방법</span>
+<span class="token function">String</span><span class="token punctuation">(</span>값<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Object.prototype.toString 메서드를 사용하는 방법</span>
+값<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 문자열 연결 연산자를 이용하는 방법</span>
+값 <span class="token operator">+</span> <span class="token string">''</span><span class="token punctuation">;</span>
+</code></pre></div><ul><li>숫자 타입으로 변환</li></ul> <div class="language-jsx extra-class"><pre class="language-jsx"><code><span class="token comment">// Numebr 생성자 함수를 new 연산자 없이 호출하는 방법</span>
+<span class="token function">Numebr</span><span class="token punctuation">(</span>값<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// parseInt, parseFloat 함수를 사용하는 방법(문자열만 가능)</span>
+<span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token string">'1'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1</span>
+<span class="token function">parseFloat</span><span class="token punctuation">(</span><span class="token string">'10.53'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 10.53</span>
+
+<span class="token comment">// + 단항 산술 연산자를 이용하는 방법</span>
+<span class="token operator">+</span><span class="token string">'0'</span><span class="token punctuation">;</span> <span class="token comment">// 0</span>
+<span class="token operator">+</span><span class="token boolean">true</span><span class="token punctuation">;</span> <span class="token comment">// 1</span>
+<span class="token operator">+</span><span class="token boolean">false</span><span class="token punctuation">;</span> <span class="token comment">// 0</span>
+
+<span class="token comment">// * 산술 연산자를 이용하는 방법</span>
+<span class="token comment">// 문자열 -&gt; 숫자</span>
+<span class="token string">'0'</span> <span class="token operator">*</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">// 0</span>
+<span class="token boolean">true</span> <span class="token operator">*</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">// 1</span>
+<span class="token boolean">false</span> <span class="token operator">*</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">// 0</span>
+</code></pre></div><ul><li>불리언 타입으로 변환</li></ul> <div class="language-jsx extra-class"><pre class="language-jsx"><code><span class="token comment">// boolean 생성자 함수를 new 연산자 없이 호출하는 방법</span>
+<span class="token function">Boolean</span><span class="token punctuation">(</span><span class="token string">'x'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+<span class="token function">Boolean</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// false</span>
+
+<span class="token function">Boolean</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// false</span>
+<span class="token function">Boolean</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+<span class="token function">Boolean</span><span class="token punctuation">(</span><span class="token number">NaN</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// false</span>
+<span class="token function">Boolean</span><span class="token punctuation">(</span><span class="token number">Infinity</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+
+<span class="token function">Boolean</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// false</span>
+<span class="token function">Boolean</span><span class="token punctuation">(</span><span class="token keyword">undefined</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// false</span>
+
+<span class="token function">Boolean</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+<span class="token function">Boolean</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+
+<span class="token comment">// 다중 부정(!!)을 이용한 방법</span>
+<span class="token comment">// 1. 첫번째 부정으로 원래 값을 boolean타입으로 바꾸고 반대로 변환해준다.</span>
+<span class="token comment">// 2. 반대로 출력된 값을 다시 반대로(원래대로) 변환해준다.</span>
+
+<span class="token operator">!</span><span class="token operator">!</span><span class="token string">'x'</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+<span class="token operator">!</span><span class="token operator">!</span><span class="token string">''</span><span class="token punctuation">;</span> <span class="token comment">// false</span>
+
+<span class="token operator">!</span><span class="token operator">!</span><span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">// false</span>
+<span class="token operator">!</span><span class="token operator">!</span><span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+</code></pre></div><h2 id="단축-평가"><a href="#단축-평가" class="header-anchor">#</a> 단축 평가</h2> <hr> <ul><li>논리 연산자를 사용한 단축 평가</li></ul> <p>논리합(||) 혹은 논리곱(&amp;&amp;) 연산의 평가 결과는 불리언 값이 아닐 수도 있다.</p> <div class="language-jsx extra-class"><pre class="language-jsx"><code><span class="token comment">// &amp;&amp; : 마지막 피연산자를 출력한다.</span>
+<span class="token string">'Cat'</span> <span class="token operator">&amp;&amp;</span> <span class="token string">'Dog'</span><span class="token punctuation">;</span> <span class="token comment">// &quot;Dog&quot;</span>
+
+<span class="token comment">// || : 첫번째 피연산자를 출력한다.</span>
+<span class="token string">'Cat'</span> <span class="token operator">||</span> <span class="token string">'Dog'</span><span class="token punctuation">;</span> <span class="token comment">// &quot;Cat&quot;</span>
+</code></pre></div><p>위처럼 논리합, 논리곱은 <strong>피연산자를 타입 변환하지 않고 그대로 반환한다(=단축평가).</strong></p> <p>단축평가 : 표현식을 평가하는 도중에 평가 결과가 확정된 경우 나머지 평가 과정을 생략하는 것</p> <div class="language-jsx extra-class"><pre class="language-jsx"><code><span class="token string">'Cat'</span> <span class="token operator">||</span> <span class="token string">'Dog'</span><span class="token punctuation">;</span> <span class="token comment">// &quot;Cat&quot;</span>
+<span class="token boolean">false</span> <span class="token operator">||</span> <span class="token string">'Dog'</span><span class="token punctuation">;</span> <span class="token comment">// &quot;Dog&quot;</span>
+<span class="token string">'Cat'</span> <span class="token operator">||</span> <span class="token boolean">false</span><span class="token punctuation">;</span> <span class="token comment">// &quot;Cat&quot;</span>
+
+<span class="token string">'Cat'</span> <span class="token operator">&amp;&amp;</span> <span class="token string">'Dog'</span><span class="token punctuation">;</span> <span class="token comment">// &quot;Dog&quot;</span>
+<span class="token boolean">false</span> <span class="token operator">&amp;&amp;</span> <span class="token string">'Dog'</span><span class="token punctuation">;</span> <span class="token comment">// false</span>
+<span class="token string">'Cat'</span> <span class="token operator">&amp;&amp;</span> <span class="token boolean">false</span><span class="token punctuation">;</span> <span class="token comment">// false</span>
+</code></pre></div><ul><li>프로퍼티를 참조할 때</li></ul> <div class="language-jsx extra-class"><pre class="language-jsx"><code><span class="token keyword">var</span> elem <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> value <span class="token operator">=</span> elem<span class="token punctuation">.</span>value<span class="token punctuation">;</span> <span class="token comment">// TypeError : Cannot read property 'value' of null</span>
+
+<span class="token comment">/* ----------------------------------- */</span>
+
+<span class="token keyword">var</span> elem <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+<span class="token comment">// elem이 값을 가지고 있으면 elem으로 평가되고</span>
+<span class="token comment">// 값이 없다면(null, undefined) elem.value로 평가된다.</span>
+<span class="token keyword">var</span> value <span class="token operator">=</span> elem <span class="token operator">&amp;&amp;</span> elem<span class="token punctuation">.</span>value<span class="token punctuation">;</span> <span class="token comment">// null</span>
+</code></pre></div><ul><li>함수 매개변수에 기본값을 설정할 때 (undefined로 인한 에러 방지)</li></ul> <div class="language-jsx extra-class"><pre class="language-jsx"><code><span class="token keyword">function</span> <span class="token function">getStringLength</span><span class="token punctuation">(</span><span class="token parameter">str</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  str <span class="token operator">=</span> str <span class="token operator">||</span> <span class="token string">''</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> str<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">getStringLength</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 0 (undefined 에러가 발생하지 않는다.)</span>
+<span class="token function">getStringLength</span><span class="token punctuation">(</span><span class="token string">'hi'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 2</span>
+
+<span class="token comment">/* ------------------------------------------- */</span>
+
+<span class="token keyword">function</span> <span class="token function">getStringLength</span><span class="token punctuation">(</span>str <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 매개변수의 기본값 설정</span>
+  <span class="token keyword">return</span> str<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">getStringLength</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 0</span>
+<span class="token function">getStringLength</span><span class="token punctuation">(</span><span class="token string">'hi'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 2</span>
+</code></pre></div><ul><li>옵셔널 체이닝 연산자
+(좌항의 피연산자가 null 또는 undefined인 경우만 undeifned를 반환하고, 그렇지 않으면 우항의 프로퍼티 참조를 이어간다.)</li></ul> <div class="language-jsx extra-class"><pre class="language-jsx"><code><span class="token keyword">var</span> elem <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> value <span class="token operator">=</span> elem<span class="token operator">?.</span>value<span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// elem이 null이기 때문에 undefined를 반환</span>
+</code></pre></div><ul><li>null 병합 연산자
+(좌항이 null 또는 undefined인 경우 우항을 반환하고, 그렇지 않으면 좌항을 반환한다.)</li></ul> <div class="language-jsx extra-class"><pre class="language-jsx"><code><span class="token comment">// null 병합 연산자는 변수에 기본값을 설정할 때 유용하다.</span>
+<span class="token keyword">var</span> foo <span class="token operator">=</span> <span class="token keyword">null</span> <span class="token operator">??</span> <span class="token string">'default string'</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>foo<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &quot;default string</span>
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/giwonn/giwonn.github.io/edit/master/TIL/Lang - Javascript/09장 타입변환, 단축평가.md" target="_blank" rel="noopener noreferrer">수정</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">최근수정일:</span> <span class="time">2021.11.17 AM 11:31</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/TIL/Lang - Javascript/07_8장 연산자,제어문.html" class="prev">
+        7,8장. 연산자와 제어문
+      </a></span> <span class="next"><a href="/TIL/Lang - Javascript/10장 객체 리터럴.html">
+        10장. 객체 리터럴
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.fcc90013.js" defer></script><script src="/assets/js/9.d42a2257.js" defer></script><script src="/assets/js/2.85121300.js" defer></script><script src="/assets/js/50.e162ff7a.js" defer></script>
+  </body>
+</html>
