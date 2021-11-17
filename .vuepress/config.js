@@ -3,10 +3,6 @@ const dayjs = require('dayjs');
 require('dayjs/locale/ko');
 
 module.exports = {
-  sitemap: {
-    filename: 'sitemap.xml',
-    domain: 'https://giwonn.github.io',
-  },
   head: [
     [
       'script',
@@ -60,5 +56,6 @@ module.exports = {
       },
     ],
     ['vuepress-plugin-code-copy'],
+    { sitemap: { hostname: 'https://giwonn.github.io/' } },
   ],
 };
