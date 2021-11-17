@@ -28,14 +28,15 @@ module.exports = {
     smoothScroll: true,
     lastUpdated: '최근수정일',
     nav: [
+      { text: '홈', link: '/' },
       { text: 'TIL', link: '/TIL/' },
       { text: '개발노트', link: '/devnote/' },
       { text: 'GitHub', link: 'https://github.com/giwonn' },
     ],
     sidebar: {
       '/devnote/': getDir('/devnote/'),
-      '/': getDir('/'),
-      '/': getDir('/TIL/'),
+      '/TIL/': getDir('/TIL/'),
+      '/': [''],
     },
     searchPlaceholder: '검색해주세요...',
     docsRepo: 'giwonn/giwonn.github.io',
