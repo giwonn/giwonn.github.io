@@ -48,14 +48,15 @@ module.exports = {
     '@vuepress/back-to-top',
     [
       '@vuepress/last-updated',
-      {
-        transformer: (timestamp, lang) => {
-          const dayjs = require('dayjs');
-          require('dayjs/locale/ko');
-          dayjs.locale(lang);
-          return dayjs(timestamp).format('YYYY. MM. DD. HH:mm');
-        },
-      },
+      // ,
+      // {
+      //   transformer: (timestamp, lang) => {
+      //     const dayjs = require('dayjs');
+      //     require('dayjs/locale/ko');
+      //     dayjs.locale(lang);
+      //     return dayjs(timestamp).format('YYYY. MM. DD. HH:mm');
+      //   },
+      // },
     ],
     ['vuepress-plugin-code-copy'],
     ['sitemap', { hostname: 'https://giwonn.github.io/' }],
