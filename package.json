@@ -5,11 +5,13 @@
     "dev": "vuepress dev",
     "build": "vuepress build"
   },
+  "dependencies": {
+    "moment": "^2.29.1"
+  },
   "devDependencies": {
     "@vuepress/plugin-back-to-top": "^1.8.2",
     "@vuepress/plugin-last-updated": "^1.8.2",
     "@vuepress/theme-default": "^1.8.2",
-    "moment": "^2.29.1",
     "vuepress": "^1.8.2",
     "vuepress-plugin-code-copy": "^1.0.6",
     "vuepress-plugin-sitemap": "^2.3.1"
