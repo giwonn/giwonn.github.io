@@ -19,7 +19,7 @@ module.exports = {
   ],
   locales: {
     '/': {
-      lang: 'ko',
+      lang: 'ko-KR',
     },
   },
   title: `기원's Study(ing)`,
