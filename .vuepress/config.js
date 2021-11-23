@@ -51,7 +51,7 @@ module.exports = {
       {
         transformer: (timestamp, lang) => {
           const moment = require('moment');
-          moment.locale(lang);
+          moment.locale('ko-KR');
           return moment(timestamp).format('YYYY. MM. DD. HH:mm');
         },
       },
