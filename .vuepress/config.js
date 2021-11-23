@@ -52,7 +52,7 @@ module.exports = {
         transformer: (timestamp, lang) => {
           const dayjs = require('dayjs');
           require('dayjs/locale/ko');
-          dayjs.locale('ko');
+          dayjs.locale(lang);
           return dayjs(timestamp).format('YYYY. MM. DD. HH:mm');
         },
       },
