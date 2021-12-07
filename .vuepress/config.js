@@ -30,12 +30,14 @@ module.exports = {
     nav: [
       { text: '홈', link: '/' },
       { text: 'TIL', link: '/TIL/' },
+      { text: 'Book', link: '/book/' },
       { text: '개발노트', link: '/devnote/' },
       { text: 'GitHub', link: 'https://github.com/giwonn' },
     ],
     sidebar: {
-      '/devnote/': getDir('/devnote/'),
       '/TIL/': getDir('/TIL/'),
+      '/book/': getDir('/book/'),
+      '/devnote/': getDir('/devnote/'),
       '/': [''],
     },
     searchPlaceholder: '검색해주세요...',
@@ -58,5 +60,6 @@ module.exports = {
     ],
     ['vuepress-plugin-code-copy'],
     ['sitemap', { hostname: 'https://giwonn.github.io/' }],
+    ['@vuepress/medium-zoom']
   ],
 };

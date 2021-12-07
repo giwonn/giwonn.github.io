@@ -69,4 +69,4 @@
 
 ---
 
-![activity-lifecycle](/images/APP-Android/activity-lifecycle.png)
+![activity-lifecycle](/images/TIL/APP-Android/activity-lifecycle.png)

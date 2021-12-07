@@ -13,7 +13,7 @@ Java ORM 기술 표준 인터페이스
 
 JPA는 Application과 JDBC 사이에서 동작한다.
 
-<!-- ![Untitled](https://github.com/l4279625/TIL/blob/main/images/JPA_1.png) -->
+<!-- ![Untitled](https://github.com/l4279625/TIL/blob/main/images/TIL/JPA_1.png) -->
 
 ## JPA를 사용하는 이유
 
@@ -32,7 +32,7 @@ JPA는 Application과 JDBC 사이에서 동작한다.
 - **패러다임 불일치 해결**
     1. 상속관계 해결 (SQL에서 JOIN으로 연결해야하는 부분을 상속처럼 이용하여 해결)
 
-    <!-- ![Untitled](https://github.com/l4279625/TIL/blob/main/images/JPA_2.png) -->
+    <!-- ![Untitled](https://github.com/l4279625/TIL/blob/main/images/TIL/JPA_2.png) -->
 
     1. 연관관계 (FK에 의존하지 않아 JOIN을 사용할 필요가 없어 SQL에 덜 의존적임)
 
@@ -45,7 +45,7 @@ JPA는 Application과 JDBC 사이에서 동작한다.
     4. 데이터 접근 추상화 벤더 독립성
     JPA는 interface의 집합으로써 특정 DB에 종속적이지 않아, 대부분의 DB를 사용가능
 
-    <!-- ![Untitled](https://github.com/l4279625/TIL/blob/main/images/JPA_3.png) -->
+    <!-- ![Untitled](https://github.com/l4279625/TIL/blob/main/images/TIL/JPA_3.png) -->
 
 데이터베이스를 객체답게 모델링 할 수록 SQL과 매핑하는 작업만 늘어나게 되어 SQL에 의존적인 설계방식이 되어버린다.
 
@@ -60,7 +60,7 @@ JPA는 객체를 List와 같은 자바 컬렉션에 저장하듯이 DB에 저장
 - Entity를 영구 저장하는 환경
 - EntityManage를 통해서 영속성 Context에 접근할 수 있음
 
-<!-- ![Untitled](https://github.com/l4279625/TIL/blob/main/images/JPA_4.png) -->
+<!-- ![Untitled](https://github.com/l4279625/TIL/blob/main/images/TIL/JPA_4.png) -->
 
 ### 영속성 생명 주기
 

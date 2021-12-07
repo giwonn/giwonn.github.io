@@ -15,10 +15,10 @@ GraphQL에서는 요청을 보내는 방법을 2가지로 정의하는데, **쿼
 ## 데이터 조회
 
 ### 쿼리 - 단순 조회  
-![단순 조회](https://github.com/l4279625/TIL/blob/main/images/GraphQL-02_01.PNG)
+![단순 조회](https://github.com/l4279625/TIL/blob/main/images/TIL/GraphQL-02_01.PNG)
 
 ### 쿼리 - 인자를 통한 조회
-![인자를 통한 조회](https://github.com/l4279625/TIL/blob/main/images/GraphQL-02_02.PNG)
+![인자를 통한 조회](https://github.com/l4279625/TIL/blob/main/images/TIL/GraphQL-02_02.PNG)
 
 
 ### 뮤테이션 - 데이터 변조
@@ -91,7 +91,7 @@ GraphQL에서는 각 필드마다 하나의 함수가 존재하며, 이 함수�
 <br>
 
 ## GraphQL 비즈니스 로직
-![GraphQL 비즈니스 로직](https://github.com/l4279625/TIL/blob/main/images/GraphQL-02_03.png)
+![GraphQL 비즈니스 로직](https://github.com/l4279625/TIL/blob/main/images/TIL/GraphQL-02_03.png)
 
 구현시, 비즈니스 로직은 실제 리졸버 함수에 담지 않는다.  
 그러므로 실제 로직은 **비즈니스 로직 레이어**(다른 파일의 다른 함수)에 담는 것이 권장된다.  

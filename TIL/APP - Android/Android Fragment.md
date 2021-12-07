@@ -12,7 +12,7 @@
 - Activity : 앱의 전체적인 UI에 포함될 요소들을 배치하는 곳
 - Fragment : 단일 화면이나 화면 일부에 관한 UI를 정의하기에 적합함
 - 하늘색 부분은 Activity에 배치된 UI이고, 연두색은 Fragment 자체 UI이다. Activity는 연두색 Fragment를 호스팅하고 있다고 보면 된다.
-  ![android-fragment](/images/APP-Android/android-fragment.png)
+  ![android-fragment](/images/TIL/APP-Android/android-fragment.png)
 
 ## 장점
 

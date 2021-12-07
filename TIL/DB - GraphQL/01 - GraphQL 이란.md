@@ -23,7 +23,7 @@ GraphQL은 **웹 클라이언트**가 데이터를 서버로 부터 효율적으
   SELECT plot_id, species_id, sex, weight, ROUND(weight / 1000.0, 2) FROM surveys;
   ```
 - **GraphQL**
-  ![image](/images/DB-GraphQL/graphql-1-1.png)
+  ![image](/images/TIL/DB-GraphQL/graphql-1-1.png)
 
 사실 이렇게만 보면 굳이 번거롭게 GraphQL을 사용해야하나 싶었다.  
 그냥 back-end단에서 SQL로 요청하면 되는데, front-end단에서 GraphQL -> GraphQL Server로 요청을 해야하니 오히려 번거롭게 느껴졌다.  
@@ -67,7 +67,7 @@ ex) 사람에 대한 정보 뿐 아니라 그 사람의 최근 게시글 5개를
 ## GraphQL 장점
 
 **1. 단 하나의 EndPoint만 사용하여 구현 가능하다.** (유지보수가 용이해진다)
-![https://devopedia.org/graphql](/images/DB-GraphQL/graphql-1-2.png)  
+![https://devopedia.org/graphql](/images/TIL/DB-GraphQL/graphql-1-2.png)  
 <br>
 **2. 한번의 요청으로 원하는 데이터를 정확히 가져올 수 있음** (Overfetching, Underfetching 해결)  
 <br>
@@ -83,7 +83,7 @@ ex) 사람에 대한 정보 뿐 아니라 그 사람의 최근 게시글 5개를
 
 ## GraphQL vs REST
 
-![graphql-1-3](/images/DB-GraphQL/graphql-1-3.png)
+![graphql-1-3](/images/TIL/DB-GraphQL/graphql-1-3.png)
 
 ## Reference
 

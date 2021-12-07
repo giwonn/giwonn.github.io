@@ -29,4 +29,4 @@ console.log(foo); // 1
 ```
 
 - 결과  
-  ![Untitled](/images/Lang-Javascript/let-result.png)
+  ![Untitled](/images/TIL/Lang-Javascript/let-result.png)

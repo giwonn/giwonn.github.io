@@ -14,10 +14,10 @@ TCP, IP 두가지의 프로토콜로 이루어져 있다.
 
 TCP/IP는 OSI 7계층 중 4계층으로 이루어져 있다.  
 (7계층은 실무에서 사용하는 경우가 없으므로, 자세히 다루지 않겠다.)  
-![7계층/4계층](/images/CS-Network/tcpip.png)
+![7계층/4계층](/images/TIL/CS-Network/tcpip.png)
 
 - 웹 액세스의 프로토콜 조합
-![web-access-protocol](/images/CS-Network/web-access-protocol.jpg)
+![web-access-protocol](/images/TIL/CS-Network/web-access-protocol.jpg)
 
 
 
@@ -28,14 +28,14 @@ TCP/IP는 OSI 7계층 중 4계층으로 이루어져 있다.
 
     하나의 네트워크는 [라우터]와 [레이어2 or 3 스위치]로 구획하는 범위이다.
 
-![network-interface-layer](/images/CS-Network/network-interface-layer.jpg)
+![network-interface-layer](/images/TIL/CS-Network/network-interface-layer.jpg)
 
 
 - 인터넷층 : 네트워크 사이에서 데이터를 전송하는 역할을 한다.
     - 라우팅 : 라우터에 의한 네트워크 간 전송을 뜻함
     - 엔드투엔드 통신 : 원격지 네트워크에서 최종 출발지와 목적지 사이의 데이터 전송을 뜻함
 
-![end-to-end](/images/CS-Network/end-to-end.jpg)
+![end-to-end](/images/TIL/CS-Network/end-to-end.jpg)
 
 
 
@@ -45,12 +45,12 @@ TCP/IP는 OSI 7계층 중 4계층으로 이루어져 있다.
     - 트랜스포트층은 TCP, UDP를 포함하는 계층이다.
     - TCP : TCP는 데이터가 유실되더라도 그 사실을 검출해 데이터를 다시 보내준다. (엔드투엔드의 신뢰성을 확보해준다.)
 
-![transport-layer](/images/CS-Network/tranport-layer.jpg)
+![transport-layer](/images/TIL/CS-Network/tranport-layer.jpg)
 
 
 - 애플리케이션층 : 애플리케이션의 기능을 실행하기 위한 데이터의 형식과 처리 절차등 결정하는 것입니다.
 
-![application-layer](/images/CS-Network/application-layer.jpg)
+![application-layer](/images/TIL/CS-Network/application-layer.jpg)
 
 
 
@@ -61,16 +61,16 @@ TCP/IP는 OSI 7계층 중 4계층으로 이루어져 있다.
     각 프로토콜에는 각각의 기능을 실현하기 위한 제어 정보(**헤더**)가 필요함
 
     - 캡슐화  
-    ![encapsulation](/images/CS-Network/encapsulation.jpg)
+    ![encapsulation](/images/TIL/CS-Network/encapsulation.jpg)
 
 
    - 역캡슐화  
-    ![decapsulation](/images/CS-Network/decapsulation.jpg)
+    ![decapsulation](/images/TIL/CS-Network/decapsulation.jpg)
 
 
 - 캡슐화 순서
 
-  ![capsulation-sequence](/images/CS-Network/capsulation-sequence.jpg)
+  ![capsulation-sequence](/images/TIL/CS-Network/capsulation-sequence.jpg)
 
 
 
@@ -78,14 +78,14 @@ TCP/IP는 OSI 7계층 중 4계층으로 이루어져 있다.
 
 - 데이터 전송
 
-![data-send](/images/CS-Network/data-send.jpg)
+![data-send](/images/TIL/CS-Network/data-send.jpg)
 
 
 - 웹서버 애플리케이션의 데이터 수신 (헤더로 목적지를 확인하고 수신)
 
     **이더넷 → IP → TCP → HTTP → 웹브라우저**
 
-![data-receive](/images/CS-Network/data-receive.png)
+![data-receive](/images/TIL/CS-Network/data-receive.png)
 
 
 1. 이더넷(네트워크 인터페이스 계층) : 
@@ -111,7 +111,7 @@ TCP/IP는 OSI 7계층 중 4계층으로 이루어져 있다.
 - 인터넷층 : IP 패킷 or IP 데이터그램
 - 네트워크 인터페이스층 : 프레임
 
-![data-name](/images/CS-Network/data-name.jpg)
+![data-name](/images/TIL/CS-Network/data-name.jpg)
 
 
 **HTTP 메시지** = 웹브라우저의 데이터 + HTTP 헤더
@@ -156,7 +156,7 @@ TCP/IP는 OSI 7계층 중 4계층으로 이루어져 있다.
         - IP패킷을 폐기했다면, 출발지로 에러리포트를 전송한다.
         - 이 에러 리포트를 **도달불능 메시지**라고 부른다.
 
-![icmp-error-report](/images/CS-Network/icmp-error-report.jpg)
+![icmp-error-report](/images/TIL/CS-Network/icmp-error-report.jpg)
 
 
 2. 진단 기능
@@ -164,7 +164,7 @@ TCP/IP는 OSI 7계층 중 4계층으로 이루어져 있다.
 - IP의 엔드투엔드 통신이 가능한지 진단한다.
 - 진단을 위해서 이용하는 명령으로 **ping 커맨드**가 있습니다.
 
-![ping-command](/images/CS-Network/ping-command.jpg)
+![ping-command](/images/TIL/CS-Network/ping-command.jpg)
 
 
 ## ARP란?
@@ -216,7 +216,7 @@ TCP/IP는 OSI 7계층 중 4계층으로 이루어져 있다.
     1. TCP 커넥션 맺기
     2. 애플리케이션 간 데이터 송수신
     3. TCP 커넥션 끊기
-    ![tcp-data-send](/images/CS-Network/tcp-data-send.jpg)
+    ![tcp-data-send](/images/TIL/CS-Network/tcp-data-send.jpg)
 
 
 ## TCP 헤더 형식 (중요한 순서대로!)
@@ -224,14 +224,14 @@ TCP/IP는 OSI 7계층 중 4계층으로 이루어져 있다.
 1. 포트 번호 (적절한 애플리케이션 프로토콜에 데이터를 배분할 수 있기 때문)
 2. 시퀀스 번호
 3. ACK 번호
-![tcp-header](/images/CS-Network/tcp-header.png)
+![tcp-header](/images/TIL/CS-Network/tcp-header.png)
 
 
 ## 데이터 분할 구조
 
 - 데이터를 분할하는 기준 단위는 MSS(Maximum Segment Size)라고 부른다.
 - MSS의 표준 크기는 1460byte이다.
-![data-division](/images/CS-Network/data-division.jpg)
+![data-division](/images/TIL/CS-Network/data-division.jpg)
 
 
 
@@ -244,7 +244,7 @@ TCP/IP는 OSI 7계층 중 4계층으로 이루어져 있다.
 
 1. 확인을 하지 않으므로 TCP에 비해 전송효율이 좋다.
 2. 데이터를 일방적으로 보여주는 스트리밍 같은 방식에 특히 좋다.
-![udp](/images/CS-Network/udp.png)
+![udp](/images/TIL/CS-Network/udp.png)
 
 
 
@@ -268,7 +268,7 @@ TCP/IP는 OSI 7계층 중 4계층으로 이루어져 있다.
     2. DHCP OFFER
     3. DHCP REQUEST
     4. DHCP ACK
-![dhcp](/images/CS-Network/dhcp.jpg)
+![dhcp](/images/TIL/CS-Network/dhcp.jpg)
 
 
 # 끗!

@@ -26,7 +26,7 @@ export default {
 </script>
 ```
   
-![vue-lifecycle](/images/FW-Vue/vue-lifecycle.png)
+![vue-lifecycle](/images/TIL/FW-Vue/vue-lifecycle.png)
 
 
 

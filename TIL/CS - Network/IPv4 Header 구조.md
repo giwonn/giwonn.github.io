@@ -1,5 +1,5 @@
 ## IPv4패킷 헤더 구조
-![ip패킷구조](/images/CS-Network/ipv4-header.png)
+![ip패킷구조](/images/TIL/CS-Network/ipv4-header.png)
 
 IP패킷은 라우터 **MTU**(Maximum Transfer Unit)에 맞게 전송해야 한다.  
 패킷의 크기가 클 경우 단편화가 일어나게 된다.  
@@ -16,8 +16,8 @@ IP패킷은 라우터 **MTU**(Maximum Transfer Unit)에 맞게 전송해야 한�
 - **TOS (Type Of Service)** - 8bit
   - 서비스(=패킷 처리)에 대한 우선순위를 설정할 수 있음
   - 우선순위를 나타내는 Precedence (3bit) + 서비스 유형지정비트 (4bit) + 사용되지 않는 1bit 로 이루어져 있음
-![tos](/images/CS-Network/tos.png)  
-![tos-2](/images/CS-Network/tos-2.png)
+![tos](/images/TIL/CS-Network/tos.png)  
+![tos-2](/images/TIL/CS-Network/tos-2.png)
 <br><br>
 - **Total Length** - 16bit
   - 헤더와 데이터를 포함한 패킷의 전체 길이를 나타낸다.
@@ -37,7 +37,7 @@ IP패킷은 라우터 **MTU**(Maximum Transfer Unit)에 맞게 전송해야 한�
 <br><br>
 - **Fragment Offset** (13bit)
   - 8바이트 오프셋으로 조각에 저장된 원래 데이터의 바이트 범위를 나타낸다.  
-![fregmentation](/images/CS-Network/fregmentation.png)
+![fregmentation](/images/TIL/CS-Network/fregmentation.png)
 <br><br>
 - **TTL (Time To Live)** (8bit)
   - 패킷이 무한루핑 하는 것을 방지하기 위하여 만들어졌으며 라우터를 지날 때마다 1씩 감소한다.
@@ -70,4 +70,4 @@ IP패킷은 라우터 **MTU**(Maximum Transfer Unit)에 맞게 전송해야 한�
 <br><br>
 
 ## IPv6 header 구조 (번외)
-![ipv6](/images/CS-Network/ipv6.png)
+![ipv6](/images/TIL/CS-Network/ipv6.png)
