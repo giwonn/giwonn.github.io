@@ -1,6 +1,7 @@
 <template>
   <ParentLayout>
     <Comment slot="page-bottom" />
+    <!-- <CommentDarass slot="page-bottom"/> -->
   </ParentLayout>
 </template>
 
@@ -8,7 +9,7 @@
 import ParentLayout from '@parent-theme/layouts/Layout.vue';
 export default {
   components: {
-    ParentLayout,
+    ParentLayout
   },
 };
 </script>

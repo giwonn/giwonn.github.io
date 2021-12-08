@@ -9,8 +9,8 @@
     "moment": "^2.29.1"
   },
   "devDependencies": {
-    "@vuepress/plugin-last-updated": "^1.8.2",
     "@vuepress/plugin-back-to-top": "^1.8.2",
+    "@vuepress/plugin-last-updated": "^1.8.2",
     "@vuepress/plugin-medium-zoom": "^1.8.2",
     "@vuepress/theme-default": "^1.8.2",
     "vuepress": "^1.8.2",
