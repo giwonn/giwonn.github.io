@@ -1,5 +1,5 @@
 <template>
-  <ParentLayout>
+  <ParentLayout id='parent'>
     <Comment slot="page-bottom" />
     <!-- <CommentDarass slot="page-bottom"/> -->
   </ParentLayout>
@@ -13,3 +13,8 @@ export default {
   },
 };
 </script>
+<style>
+#parent > main > .content__default {
+  max-width: 1200px;
+}
+</style>
