@@ -4,7 +4,9 @@
 
 ### 1. [TIL](./TIL/)
 
-### 2. [Book](./book/)
+### 2. [알고리즘](./algorithm/)
+
+### 3. [Book](./book/)
 
 ### 3. [개발노트](./devnote/)
 
