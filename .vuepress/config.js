@@ -36,10 +36,10 @@ module.exports = {
       { text: 'GitHub', link: 'https://github.com/giwonn' },
     ],
     sidebar: {
-      '/TIL/': getDir('/TIL/'),
-      '/book/': getDir('/book/'),
-      '/devnote/': getDir('/devnote/'),
-      '/algorithm/': getDir('/algorithm/'),
+      '/TIL/': getDir('TIL'),
+      '/book/': getDir('book'),
+      '/devnote/': getDir('devnote'),
+      '/algorithm/': getDir('algorithm'),
       '/': [''],
     },
     searchPlaceholder: '검색해주세요...',
@@ -61,6 +61,6 @@ module.exports = {
       },
     ],
     ['sitemap', { hostname: 'https://giwonn.github.io/' }],
-    ['@vuepress/medium-zoom']
+    ['@vuepress/medium-zoom'],
   ],
 };
