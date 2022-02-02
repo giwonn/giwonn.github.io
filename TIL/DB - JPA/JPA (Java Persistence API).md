@@ -1,4 +1,4 @@
-## JPA
+# JPA란
 
 ---
 
@@ -21,29 +21,32 @@ JPA는 Application과 JDBC 사이에서 동작한다.
 
 - **SQL 중심적인 개발 → 객체 중심적인 개발**
 - **CRUD 작업 간결화**
-    1. Create : jpa.persist(member)
-    2. Read : Member member = jpa.find(memberId)
-    3. Update : member.setName("변경할 이름")
-    4. Delete : jpa.remove(member)
 
-    위와 같이 써주면 알아서 sql문을 매핑해준다.
+  1. Create : jpa.persist(member)
+  2. Read : Member member = jpa.find(memberId)
+  3. Update : member.setName("변경할 이름")
+  4. Delete : jpa.remove(member)
+
+  위와 같이 써주면 알아서 sql문을 매핑해준다.
 
 - **유지보수 편의성 증가**
 - **패러다임 불일치 해결**
-    1. 상속관계 해결 (SQL에서 JOIN으로 연결해야하는 부분을 상속처럼 이용하여 해결)
+
+  1. 상속관계 해결 (SQL에서 JOIN으로 연결해야하는 부분을 상속처럼 이용하여 해결)
 
     <!-- ![Untitled](https://github.com/l4279625/TIL/blob/main/images/TIL/JPA_2.png) -->
 
-    1. 연관관계 (FK에 의존하지 않아 JOIN을 사용할 필요가 없어 SQL에 덜 의존적임)
+  1. 연관관계 (FK에 의존하지 않아 JOIN을 사용할 필요가 없어 SQL에 덜 의존적임)
 
 - **성능 문제 해결**
-    1. 1차 캐시와 동일성 보장 (같은 트랜잭션 안에서는 캐싱을 통해 같은 Entity를 반환함)
-    2. 쓰기 지연을 지원함 (JDBC BATCH SQL 기능을 통해 모아놓은 SQL을 한번에 전송함)
-    3. 즉시 로딩과 지연 로딩
-        - 즉시 로딩 : JOIN으로 한번에 연관된 객체까지 미리 조회함
-        - 지연 로딩 : 객체가 실제로 사용될 때 로딩됨
-    4. 데이터 접근 추상화 벤더 독립성
-    JPA는 interface의 집합으로써 특정 DB에 종속적이지 않아, 대부분의 DB를 사용가능
+
+  1. 1차 캐시와 동일성 보장 (같은 트랜잭션 안에서는 캐싱을 통해 같은 Entity를 반환함)
+  2. 쓰기 지연을 지원함 (JDBC BATCH SQL 기능을 통해 모아놓은 SQL을 한번에 전송함)
+  3. 즉시 로딩과 지연 로딩
+     - 즉시 로딩 : JOIN으로 한번에 연관된 객체까지 미리 조회함
+     - 지연 로딩 : 객체가 실제로 사용될 때 로딩됨
+  4. 데이터 접근 추상화 벤더 독립성
+     JPA는 interface의 집합으로써 특정 DB에 종속적이지 않아, 대부분의 DB를 사용가능
 
     <!-- ![Untitled](https://github.com/l4279625/TIL/blob/main/images/TIL/JPA_3.png) -->
 
@@ -97,5 +100,5 @@ JPA 구현체들을 좀 더 쉽게 사용하고자 추상화시킨 모듈
 JPA ← Hibernate ← Spring Data JPA
 
 - **Spring Data JPA와 Hibernate를 같이 쓰는 이유**
-    1. 구현체 교체의 용이성 (Hibernate 외에 다른 구현체로 쉽게 교체 가능)
-    2. 저장소 교체의 용이성 (관계형 데이터베이스 외에 다른 저장소로 쉽게 교체 가능)
+  1. 구현체 교체의 용이성 (Hibernate 외에 다른 구현체로 쉽게 교체 가능)
+  2. 저장소 교체의 용이성 (관계형 데이터베이스 외에 다른 저장소로 쉽게 교체 가능)

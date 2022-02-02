@@ -1,51 +1,50 @@
 const getSidebar = require('./getSidebar');
+const { path } = require('@vuepress/utils');
 
 module.exports = {
-  head: [
-    [
-      'script',
-      {
-        async: true,
-        src: 'https://www.googletagmanager.com/gtag/js?id=G-BF2TS7D4KC',
-      },
-    ],
-    [
-      'script',
-      {},
-      [
-        "window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-BF2TS7D4KC');",
-      ],
-    ],
-  ],
-  locales: {
-    '/': {
-      lang: 'ko-KR',
-    },
-  },
   title: `기원's Study(ing)`,
   description: '기원이의 기술 블로그?',
+  theme: path.resolve(__dirname, './theme'),
   themeConfig: {
-    smoothScroll: true,
-    lastUpdated: '최근수정일',
-    nav: [
+    navbar: [
       { text: '홈', link: '/' },
-      { text: 'TIL', link: '/blog/TIL/' },
-      { text: '알고리즘', link: '/blog/algorithm/' },
-      { text: 'Book', link: '/blog/book/' },
-      { text: '개발노트', link: '/blog/devnote/' },
+      { text: 'TIL', link: '/TIL/' },
+      { text: '알고리즘', link: '/algorithm/' },
+      { text: 'Book', link: '/book/' },
+      { text: '개발노트', link: '/devnote/' },
       { text: 'GitHub', link: 'https://github.com/giwonn' },
     ],
     sidebar: {
-      '/blog/TIL/': getSidebar('TIL'),
-      '/blog/book/': getSidebar('book'),
-      '/blog/devnote/': getSidebar('devnote'),
-      '/blog/algorithm/': getSidebar('algorithm'),
+      '/TIL/': getSidebar('TIL'),
+      '/book/': getSidebar('book'),
+      '/devnote/': getSidebar('devnote'),
+      '/algorithm/': getSidebar('algorithm'),
       '/': [''],
     },
-    searchPlaceholder: '검색해주세요...',
-    docsRepo: 'giwonn/giwonn.github.io',
-    docsBranch: 'master',
-    editLinks: true,
-    editLinkText: '수정',
   },
+  plugins: [
+    [
+      '@vuepress/plugin-google-analytics',
+      {
+        id: 'G-0EYX5NK2D9',
+      },
+    ],
+    [
+      '@vuepress/docsearch',
+      {
+        apiKey: 'ebc82cf2e22f5f7594d6ef258c904439',
+        indexName: 'giwon',
+        locales: {
+          '/': {
+            placeholder: 'Search Documentation',
+            translations: {
+              button: {
+                buttonText: 'Search',
+              },
+            },
+          },
+        },
+      },
+    ],
+  ],
 };

@@ -1,21 +1,22 @@
 const { readdirSync } = require('fs');
-const blogPath = `${__dirname}/../blog`;
+const blogPath = `${__dirname}/..`;
 
 function getFolderList(menu) {
   return readdirSync(`${blogPath}/${menu}/`).filter((folderName) => folderName !== 'README.md');
 }
 
-function getChildren(menu, title) {
-  return readdirSync(`${blogPath}/${menu}/${title}`).map(
-    (fileName) => `${title}/${fileName.replace('.md', '')}`
+function getChildren(menu, folderName) {
+  return readdirSync(`${blogPath}/${menu}/${folderName}`).map(
+    (fileName) => `/${menu}/${folderName}/${fileName}`
   );
 }
 
 module.exports = (menu = '') => {
-  return getFolderList(menu).map((title) => {
+  return getFolderList(menu).map((folderName) => {
     return {
-      title,
-      children: getChildren(menu, title),
+      text: folderName,
+      children: getChildren(menu, folderName),
+      collapsible: true,
     };
   });
 };
