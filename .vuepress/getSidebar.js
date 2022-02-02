@@ -1,5 +1,5 @@
 const { readdirSync } = require('fs');
-const blogPath = `${__dirname}/..`;
+const blogPath = `${__dirname}/../blog`;
 
 function getFolderList(menu) {
   return readdirSync(`${blogPath}/${menu}/`).filter((folderName) => folderName !== 'README.md');

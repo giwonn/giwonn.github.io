@@ -1,4 +1,4 @@
-const getDir = require('./getDir');
+const getSidebar = require('./getSidebar');
 
 module.exports = {
   head: [
@@ -29,17 +29,17 @@ module.exports = {
     lastUpdated: '최근수정일',
     nav: [
       { text: '홈', link: '/' },
-      { text: 'TIL', link: '/TIL/' },
-      { text: '알고리즘', link: '/algorithm/' },
-      { text: 'Book', link: '/book/' },
-      { text: '개발노트', link: '/devnote/' },
+      { text: 'TIL', link: '/blog/TIL/' },
+      { text: '알고리즘', link: '/blog/algorithm/' },
+      { text: 'Book', link: '/blog/book/' },
+      { text: '개발노트', link: '/blog/devnote/' },
       { text: 'GitHub', link: 'https://github.com/giwonn' },
     ],
     sidebar: {
-      '/TIL/': getDir('TIL'),
-      '/book/': getDir('book'),
-      '/devnote/': getDir('devnote'),
-      '/algorithm/': getDir('algorithm'),
+      '/blog/TIL/': getSidebar('TIL'),
+      '/blog/book/': getSidebar('book'),
+      '/blog/devnote/': getSidebar('devnote'),
+      '/blog/algorithm/': getSidebar('algorithm'),
       '/': [''],
     },
     searchPlaceholder: '검색해주세요...',
