@@ -48,19 +48,4 @@ module.exports = {
     editLinks: true,
     editLinkText: '수정',
   },
-  plugins: [
-    '@vuepress/back-to-top',
-    [
-      '@vuepress/last-updated',
-      {
-        transformer: (timestamp, lang) => {
-          const moment = require('moment');
-          moment.locale('ko-KR');
-          return moment(timestamp).format('YYYY. MM. DD. HH:mm');
-        },
-      },
-    ],
-    ['sitemap', { hostname: 'https://giwonn.github.io/' }],
-    ['@vuepress/medium-zoom'],
-  ],
 };
