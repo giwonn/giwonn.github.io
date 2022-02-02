@@ -38,10 +38,9 @@ TCP/IP는 OSI 7계층 중 4계층으로 이루어져 있다.
 ### 애플리케이션의 동작을 준비하는 계층
 
 - 트랜스포트층 : 데이터를 적절한 애플리케이션에 배분하는 일을 담당
+
   - 트랜스포트층은 TCP, UDP를 포함하는 계층이다.
   - TCP : TCP는 데이터가 유실되더라도 그 사실을 검출해 데이터를 다시 보내준다. (엔드투엔드의 신뢰성을 확보해준다.)
-
-![transport-layer](/images/TIL/CS-Network/tranport-layer.jpg)
 
 - 애플리케이션층 : 애플리케이션의 기능을 실행하기 위한 데이터의 형식과 처리 절차등 결정하는 것입니다.
 
@@ -53,11 +52,9 @@ TCP/IP는 OSI 7계층 중 4계층으로 이루어져 있다.
 
   각 프로토콜에는 각각의 기능을 실현하기 위한 제어 정보(**헤더**)가 필요함
 
-  - 캡슐화  
-    ![encapsulation](/images/TIL/CS-Network/encapsulation.jpg)
+  - 캡슐화
 
-  - 역캡슐화  
-    ![decapsulation](/images/TIL/CS-Network/decapsulation.jpg)
+  - 역캡슐화
 
 - 캡슐화 순서
 
@@ -67,13 +64,9 @@ TCP/IP는 OSI 7계층 중 4계층으로 이루어져 있다.
 
 - 데이터 전송
 
-![data-send](/images/TIL/CS-Network/data-send.jpg)
-
 - 웹서버 애플리케이션의 데이터 수신 (헤더로 목적지를 확인하고 수신)
 
   **이더넷 → IP → TCP → HTTP → 웹브라우저**
-
-![data-receive](/images/TIL/CS-Network/data-receive.png)
 
 1. 이더넷(네트워크 인터페이스 계층) :
    - 이더넷 헤더를 참조하여 자기 앞으로 온 데이터인지 확인
@@ -151,8 +144,6 @@ TCP/IP는 OSI 7계층 중 4계층으로 이루어져 있다.
 - IP의 엔드투엔드 통신이 가능한지 진단한다.
 - 진단을 위해서 이용하는 명령으로 **ping 커맨드**가 있습니다.
 
-![ping-command](/images/TIL/CS-Network/ping-command.jpg)
-
 ## ARP란?
 
 - IP 주소와 인터페이스를 식별하기 위한 **MAC주소(물리주소)를 대응**시켜줌
@@ -209,7 +200,6 @@ TCP/IP는 OSI 7계층 중 4계층으로 이루어져 있다.
 1. 포트 번호 (적절한 애플리케이션 프로토콜에 데이터를 배분할 수 있기 때문)
 2. 시퀀스 번호
 3. ACK 번호
-   ![tcp-header](/images/TIL/CS-Network/tcp-header.png)
 
 ## 데이터 분할 구조
 
