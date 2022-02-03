@@ -21,8 +21,8 @@ module.exports = {
       '/algorithm/': getSidebar('algorithm'),
       '/': [''],
     },
+    sidebarDepth: 1,
   },
-  sidebarDepth: 1,
   plugins: [
     [
       '@vuepress/plugin-google-analytics',
