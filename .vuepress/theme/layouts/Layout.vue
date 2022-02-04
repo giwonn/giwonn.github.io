@@ -1,7 +1,6 @@
 <template>
   <ParentLayout>
     <template #page-bottom>
-      <hr />
       <Comment />
     </template>
   </ParentLayout>
@@ -13,12 +12,16 @@ import Comment from '../components/Comment.vue';
 </script>
 
 <style>
-hr,
 .page > .theme-default-content,
 .page-meta,
 .page-nav,
 .giscus {
+  padding: 1rem 0;
   margin: 0 auto;
   max-width: 1200px;
+}
+
+.giscus {
+  border-top: 1px solid var(--c-border);
 }
 </style>
