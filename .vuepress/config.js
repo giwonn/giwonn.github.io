@@ -21,6 +21,7 @@ module.exports = {
       '/algorithm/': getSidebar('algorithm'),
       '/': [''],
     },
+    sidebarDepth: 1,
   },
   plugins: [
     [
