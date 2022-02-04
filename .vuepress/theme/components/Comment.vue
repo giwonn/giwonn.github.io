@@ -9,10 +9,27 @@
     reactionsEnabled="1"
     emitMetadata="0"
     inputPosition="top"
-    theme="light"
+    :theme="theme"
     lang="en"
   />
 </template>
-<script setup>
+<script>
+import { ref, computed } from 'vue';
 import { Giscus } from '@giscus/vue';
+
+export default {
+  components: {
+    Giscus,
+  },
+
+  setup() {
+    const colorScheme = ref(localStorage.getItem('vuepress-color-scheme'));
+
+    const theme = computed(() => {
+      return colorScheme === 'dark' ? 'dark' : 'light';
+    });
+
+    return { theme };
+  },
+};
 </script>
