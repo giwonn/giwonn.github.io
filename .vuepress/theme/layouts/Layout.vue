@@ -16,12 +16,17 @@ import Comment from '../components/Comment.vue';
 .page-meta,
 .page-nav,
 .giscus {
-  padding: 1rem 0;
-  margin: 0 auto;
   max-width: 1200px;
 }
 
 .giscus {
+  width: auto;
+  margin: 0 auto;
+  padding: 2rem 2.5rem;
+}
+.giscus > iframe {
+  width: 100%;
   border-top: 1px solid var(--c-border);
+  padding-top: 1rem;
 }
 </style>
