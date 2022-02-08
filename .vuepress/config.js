@@ -35,12 +35,13 @@ module.exports = {
       {
         apiKey: 'ebc82cf2e22f5f7594d6ef258c904439',
         indexName: 'giwon',
+        appId: '516V9TFBMD',
         locales: {
           '/': {
-            placeholder: 'Search Documentation',
+            placeholder: '검색',
             translations: {
               button: {
-                buttonText: 'Search',
+                buttonText: 'Search Documentation',
               },
             },
           },
