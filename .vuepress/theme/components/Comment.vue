@@ -4,7 +4,7 @@
     repoId="R_kgDOGRKbbA"
     category="Announcements"
     categoryId="DIC_kwDOGRKbbM4CA_-J"
-    mapping="pathname"
+    mapping="title"
     term="Welcome to Giwon's Github-blog"
     reactionsEnabled="1"
     emitMetadata="0"
