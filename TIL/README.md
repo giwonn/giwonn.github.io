@@ -16,12 +16,10 @@ Organizing what I learned
 3. 영어 학원 다니기
 4. Docker, Kubernetes
 
-## 공부 팁
+
+## Tip
 
 - [우테코에서 찾은 나만의 효과적인 공부법](https://velog.io/@taehee-kim-dev/%EC%9A%B0%ED%85%8C%EC%BD%94%EC%97%90%EC%84%9C-%EC%B0%BE%EC%9D%80-%EB%82%98%EB%A7%8C%EC%9D%98-%ED%9A%A8%EA%B3%BC%EC%A0%81%EC%9D%B8-%EA%B3%B5%EB%B6%80%EB%B2%95)
-
-## 개발 팁
-
 - [백엔드가 이정도는 해줘야 함](https://velog.io/@city7310/%EB%B0%B1%EC%97%94%EB%93%9C%EA%B0%80-%EC%9D%B4%EC%A0%95%EB%8F%84%EB%8A%94-%ED%95%B4%EC%A4%98%EC%95%BC-%ED%95%A8-1.-%EC%BB%A8%ED%85%90%EC%B8%A0%EC%9D%98-%EB%8F%99%EA%B8%B0%EC%99%80-%EA%B0%9C%EC%9A%94)
 - ['REST' 를 보다 'RESTful' 하게 API 만들기](https://pronist.tistory.com/146)
 
@@ -37,6 +35,12 @@ Organizing what I learned
 - [깊은 복사와 얕은 복사에 대한 심도있는 이야기](https://medium.com/watcha/%EA%B9%8A%EC%9D%80-%EB%B3%B5%EC%82%AC%EC%99%80-%EC%96%95%EC%9D%80-%EB%B3%B5%EC%82%AC%EC%97%90-%EB%8C%80%ED%95%9C-%EC%8B%AC%EB%8F%84%EC%9E%88%EB%8A%94-%EC%9D%B4%EC%95%BC%EA%B8%B0-2f7d797e008a)
 - [Javascript 함수 실행 다양한 방법](http://milooy.github.io/TIL/JavaScript/javascript-run-function.html#load)
 - [Javascript DOM트리 활용하기](http://milooy.github.io/TIL/JavaScript/DOM.html#_1-%E1%84%8B%E1%85%AD%E1%84%89%E1%85%A9%E1%84%8B%E1%85%A6-%E1%84%8C%E1%85%A5%E1%86%B8%E1%84%80%E1%85%B3%E1%86%AB%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5)
+
+## Vue
+- [대용량 데이터의 처리 방법과 성능 최적화 방법](https://kdydesign.github.io/2019/04/10/vuejs-performance/)
+- [Vuex VS Event Bus](https://kdydesign.github.io/2021/01/14/vue-eventbus-vs-vuex/)
+- [Vuex Store의 state를 효율적으로 초기화하기](https://kdydesign.github.io/2019/04/10/vue-store-state/)
+- 
 
 ## 하드웨어
 
