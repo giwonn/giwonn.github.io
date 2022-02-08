@@ -5,7 +5,7 @@
 - CDN
   head 부분에 추가해야함
 
-```javascript
+```js
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 ```
 
@@ -13,7 +13,7 @@
 
 브라우저에서 DOM 트리 생성하고 난 후에 실행됨
 
-```javascript
+```js
 $(document).ready(function () {
   //...
 });
@@ -27,7 +27,7 @@ $(function () {
 
 모든 include되는 프레임들과 object, 이미지까지 로드도니 이후에 실행
 
-```javascript
+```js
 $(window).load(function () {
   //...
 });

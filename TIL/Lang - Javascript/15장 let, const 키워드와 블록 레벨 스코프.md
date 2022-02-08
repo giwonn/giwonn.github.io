@@ -20,7 +20,7 @@ let, const는 초기화가 되지 않았으므로 참조할 수 없어서 선언
 
 - TDZ(Temporal Dead Zone) : 스코프의 시작 지점부터 초기화 시작지점까지 변수를 참조할 수 없는 구간
 
-```javascript
+```js
 let foo;
 console.log(foo); // undefined
 

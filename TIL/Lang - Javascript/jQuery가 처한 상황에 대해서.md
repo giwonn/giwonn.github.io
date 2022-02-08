@@ -8,7 +8,7 @@ DOM은 브라우저마다 구조가 다른데,
 예전처럼 IE, Chrome, Safari, Opera 등... 브라우저가 다양했던 시기에는  
 브라우저에 따라 하나하나 처리할 필요 없이 jQuery만 있으면 쉽고 간단하게 DOM을 조작할 수가 있었다.
 
-```javascript
+```js
 // CDN 방법
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 ```
