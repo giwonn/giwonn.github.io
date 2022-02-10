@@ -1,4 +1,10 @@
 # vue 파일 구조
+
+:::tip
+해당 글은 Vue <Badge type="tip" text="v2" vertical="top" /> 버전을 기준으로 작성되었습니다.  
+**Composition API**를 이용한 작성법은 포함하지 않습니다.
+:::
+
 - **\<template>**: HTML 코드 작성
 - **\<script>**: javascript 코드 작성
 - **\<style>** : CSS 코드 작성
@@ -30,26 +36,23 @@
   
 <br>
 
-# \<script>
+## \<script>
 
-## name
-해당 컴포넌트의 이름을 지정해줌
+| 속성 | 뜻 |
+| :---: | :---:|
+| name | 해당 컴포넌트의 이름을 지정해줌 |
+| data | 사용할 데이터(state)를 여기서 선언함 |
+| components | 사용할 컴포넌트들을 여기서 관리함 |
+| props | 상속받은 데이터를 관리함 |
+| watch | 해당 데이터가 변화하면 추가적인 처리를 해줌 |
+| computed | 데이터를 이용해 새로운 값을 저장할 때 사용함 |
+| methods | 사용할 메서드를 여기서 관리함 |
+
+### 사용 예
 ```vue
 <script>
-export default {
-  name: 'App',
-}
-</script>
-```
+import Modal from './Modal.vue';
 
-<br>
-
-## data()
-사용할 데이터(state)를 넣어줌  
-변수, style 등... 다양한 값들을 넣어줄 수 있음  
-최종적으로 사용할 데이터들을 return 내부에 적어줌
-```vue
-<script>
 export default {
   name: 'App',
   data() {
@@ -58,21 +61,12 @@ export default {
       colorRed: 'color:red',
     }
   },
-</script>
-```
-
-<br>
-
-## watch
-변수를 감시한다.  
-  
-computed라는 속성과 비교되는데  
-**computed**는 어떤 값을 출력할 때 따로 연산을 추가해서 적용하고 싶을때,  
-**watch**는 조건식을 부여할 때 사용한다.  
-```jsx
-<script>
-export default {
-  // ...
+  components: {
+    Modal: Modal,
+  }
+  props: {
+    onerooms: Array, // (변수이름: 타입) 형식으로 저장함
+  },
   watch: {
     price1(a, b) {   // 함수 이름은 감시할 변수명과 같게 지어줌 (a=바뀐값, b=이전값)
       if (a == 70) { // a를 70으로 바꾼다면?
@@ -81,50 +75,9 @@ export default {
       }
     }
   },
-</script>
-```
+  computed: {
 
-<br>
-
-## props
-상속받은 데이터를 여기서 관리함
-```vue
-<!-- App.vue -->
-<template>
-  <Modal :onerooms="onerooms" />
-</template>
-```
-```vue
-<!-- Modal.vue -->
-<script>
-export default {
-  // ...
-  props: { // 상속받은 데이터
-    onerooms: Array, // (변수이름: 타입) 형식으로 저장함
   },
-</script>
-```
-
-<br>
-
-## methods
-사용할 메서드를 여기서 선언함
-**@click** 대신 **v-on:click**으로 사용 가능함
-```vue
-<template>
-  <!-- 넘겨줄 인자가 없을 경우 -->
-  <button @click="printOne">버튼1</button>
-  
-  <!-- 넘겨줄 인자가 있을 경우 -->
-  <button @click="printTwo(변수)">버튼2</button>
-  
-  <!-- 원본 DOM 이벤트에 엑세스 해야할 경우 -->
-  <button @click="printThree(변수, $event)">버튼3</button>
-</template>
-
-<script>
-export default {
-  // ...
   methods: {
     printOne() {
       console.log("버튼1 클릭");
@@ -137,25 +90,5 @@ export default {
     }
   }
 }
-</script>
-```
-
-<br>
-
-## components
-사용할 컴포넌트들을 여기에 선언함
-```vue
-<template>
-  <Modal/>
-</template>
-
-<script>
-import Modal from './Modal.vue';
-  
-export default {
-  // ...
-  components: {
-    Modal: Modal,
-  }
 </script>
 ```
