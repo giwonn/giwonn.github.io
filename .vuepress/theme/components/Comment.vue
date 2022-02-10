@@ -2,8 +2,8 @@
   <Giscus
     repo="giwonn/giwonn.github.io"
     repoId="R_kgDOGRKbbA"
-    category="Announcements"
-    categoryId="DIC_kwDOGRKbbM4CA_-J"
+    category="블로그 댓글"
+    categoryId="DIC_kwDOGRKbbM4CBGca"
     mapping="title"
     term="Welcome to Giwon's Github-blog"
     reactionsEnabled="1"
