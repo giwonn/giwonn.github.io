@@ -153,10 +153,10 @@
     "@docsearch/css" "3.0.0-alpha.42"
     algoliasearch "^4.0.0"
 
-"@giscus/vue@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@giscus/vue/-/vue-1.1.0.tgz#0ef2f77249e24a4605b1fd1e7d5612bc1fe84e78"
-  integrity sha512-/2+SEBb0Jw/bb7bCUrEgMKtyMja7+Q71j/lmqs6+y4tCOCjr1AxpOckXiro0ZY2khL0cJqFwI+fQe2bOGpKUEA==
+"@giscus/vue@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@giscus/vue/-/vue-1.1.1.tgz#8ccc564767b2a1357b751b1c74f843542b2ef3b0"
+  integrity sha512-N//nUA4ykteOptTOA9oPJYTkcx365pPPPmTVZJSjzWHDSf5O6IcPXoKzTTiTL8oJHHuVHe9bMnvX3K/VrtgYxQ==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
