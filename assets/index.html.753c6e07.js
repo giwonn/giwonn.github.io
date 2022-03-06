@@ -1,1 +1,0 @@
-const e={key:"v-743e1911",path:"/TIL/",title:"Today I Learned",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1645787922e3,contributors:[{name:"Giwon Lim",email:"l4279625@gmail.com",commits:1}]},filePathRelative:"TIL/README.md"};export{e as data};
