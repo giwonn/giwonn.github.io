@@ -8,7 +8,7 @@ on:
       - master
 
 jobs:
-  Build:
+  Build-And-Deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -17,7 +17,7 @@ jobs:
         with:
           node-version: '16.x'
 
-      - name: Yarn Cache (yarn.lock을 통한 캐시 생성)
+      - name: Cache Yarn (yarn.lock을 통한 캐시 생성)
         uses: actions/cache@v2
         id: yarn-cache
         with:
@@ -31,23 +31,8 @@ jobs:
       - name: Yarn Build
         run: yarn build
 
-      - name: Upload Build Artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: build
-          path: .vuepress/dist
-
-  Deploy:
-    needs: Build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Download Build Artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: build
-
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .
+          publish_dir: .vuepress/dist
