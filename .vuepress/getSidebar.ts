@@ -1,23 +1,21 @@
 import { readdirSync } from 'fs'
 
-const blogPath = `${__dirname}/..`;
+const PATH = `${__dirname}/..`;
 
-function getFolderList(menu) {
-  return readdirSync(`${blogPath}/${menu}/`).filter((folderName) => folderName !== 'README.md');
+function getFolderList(category: string) { 
+  return readdirSync(`${PATH}/${category}/`)
+    .filter((folderName) => folderName !== 'README.md');
 }
 
-function getChildren(menu, folderName) {
-  return readdirSync(`${blogPath}/${menu}/${folderName}`).map(
-    (fileName) => `/${menu}/${folderName}/${fileName}`
-  );
+function getChildren(category: string, folderName: string) {
+  return readdirSync(`${PATH}/${category}/${folderName}`)
+    .map(fileName => `/${category}/${folderName}/${fileName}`)
 }
 
-export default (menu = '') => {
-  return getFolderList(menu).map((folderName) => {
-    return {
-      text: folderName,
-      children: getChildren(menu, folderName),
-      collapsible: true,
-    };
-  });
-};
+export default (category = '') => getFolderList(category).map((folderName) => (
+  {
+    text: folderName,
+    children: getChildren(category, folderName),
+    collapsible: true,
+  }
+));
