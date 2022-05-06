@@ -38,3 +38,35 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./.vuepress/dist
+          
+      - name: Update Algolia Search Engine
+        uses: signcl/docsearch-scraper-action@master
+        env:
+          APPLICATION_ID: ${{ secrets.ALGOLIA_APPLICATION_ID }}
+          API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
+          CONFIG: '{
+            "index_name": "giwon",
+            "start_urls": ["https://giwonn.github.io/"],
+            "stop_urls": [],
+            "selectors": {
+              "lvl0": {
+                "selector": ".sidebar-heading.active",
+                "global": true,
+                "default_value": "Documentation"
+              },
+              "lvl1": ".theme-default-content h1",
+              "lvl2": ".theme-default-content h2",
+              "lvl3": ".theme-default-content h3",
+              "lvl4": ".theme-default-content h4",
+              "lvl5": ".theme-default-content h5",
+              "text": ".theme-default-content p, .theme-default-content li",
+              "lang": {
+                "selector": "/html/@lang",
+                "type": "xpath",
+                "global": true
+              }
+            },
+            "custom_settings": {
+              "attributesForFaceting": ["lang"]
+            }
+          }'
