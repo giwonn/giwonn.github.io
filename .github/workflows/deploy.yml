@@ -17,19 +17,19 @@ jobs:
         with:
           node-version: '16.x'
 
-      - name: Cache Yarn (yarn.lock을 통한 캐시 생성)
-        uses: actions/cache@v2
-        id: yarn-cache
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+      # - name: Cache Yarn (yarn.lock을 통한 캐시 생성)
+      #   uses: actions/cache@v2
+      #   id: yarn-cache
+      #   with:
+      #     path: '**/node_modules'
+      #     key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
 
-      - name: Yarn Install
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
-        run: yarn install
+      # - name: Yarn Install
+      #   if: steps.yarn-cache.outputs.cache-hit != 'true'
+      #   run: yarn install
 
-      - name: Yarn Build
-        run: yarn build
+      # - name: Yarn Build
+      #   run: yarn build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
