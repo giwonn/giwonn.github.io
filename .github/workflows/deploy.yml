@@ -13,6 +13,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Get the content of algolia.json as config
+        id: algolia_config
+        run: echo "::set-output name=config::$(cat algolia.json | jq -r tostring)"
+
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
@@ -44,29 +48,4 @@ jobs:
         env:
           APPLICATION_ID: ${{ secrets.ALGOLIA_APPLICATION_ID }}
           API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
-          CONFIG: '{
-            "index_name": "giwon",
-            "start_urls": ["https://giwon.dev/"],
-            "stop_urls": [],
-            "selectors": {
-              "lvl0": {
-                "selector": ".sidebar-heading.active",
-                "global": true,
-                "default_value": "Documentation"
-              },
-              "lvl1": ".theme-default-content h1",
-              "lvl2": ".theme-default-content h2",
-              "lvl3": ".theme-default-content h3",
-              "lvl4": ".theme-default-content h4",
-              "lvl5": ".theme-default-content h5",
-              "text": ".theme-default-content p, .theme-default-content li",
-              "lang": {
-                "selector": "/html/@lang",
-                "type": "xpath",
-                "global": true
-              }
-            },
-            "custom_settings": {
-              "attributesForFaceting": ["lang"]
-            }
-          }'
+          CONFIG: ${{ steps.algolia_config.outputs.config }}

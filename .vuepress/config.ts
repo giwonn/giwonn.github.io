@@ -1,5 +1,5 @@
-const getSidebar = require('./getSidebar');
-const { path } = require('@vuepress/utils');
+import { path } from '@vuepress/utils'
+import getSidebar from './getSidebar';
 
 module.exports = {
   title: `기원's Study(ing)`,

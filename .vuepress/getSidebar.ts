@@ -1,4 +1,5 @@
-const { readdirSync } = require('fs');
+import { readdirSync } from 'fs'
+
 const blogPath = `${__dirname}/..`;
 
 function getFolderList(menu) {
@@ -11,7 +12,7 @@ function getChildren(menu, folderName) {
   );
 }
 
-module.exports = (menu = '') => {
+export default (menu = '') => {
   return getFolderList(menu).map((folderName) => {
     return {
       text: folderName,
