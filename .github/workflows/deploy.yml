@@ -46,7 +46,7 @@ jobs:
           API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
           CONFIG: '{
             "index_name": "giwon",
-            "start_urls": ["https://giwonn.github.io/"],
+            "start_urls": ["https://giwon.dev/"],
             "stop_urls": [],
             "selectors": {
               "lvl0": {
