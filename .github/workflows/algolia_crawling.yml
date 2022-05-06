@@ -2,12 +2,12 @@ name: Algolia Crawling
 
 on: 
   workflow_run:
-    workflows: ["Deploy"]
+    workflows: ["Build And Deploy"]
     types:
       - completed
 
 jobs:
-  notify:
+  Crawling:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

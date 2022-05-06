@@ -1,6 +1,6 @@
 # .github/workflows/deploy.yml
 
-name: Deploy
+name: Build And Deploy
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
       - master
 
 jobs:
-  deploy:
+  Build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -31,6 +31,7 @@ jobs:
       - name: Yarn Build
         run: yarn build
 
+  Deploy:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
