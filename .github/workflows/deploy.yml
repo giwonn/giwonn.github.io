@@ -12,11 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-
-      - name: 크롤링 하기전에 config에 사용할 algolia.json 미리 read
-        id: algolia_config
-        run: echo "::set-output name=config::$(cat algolia.json | jq -r tostring)"
-
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
