@@ -8,7 +8,7 @@ on:
       - master
 
 jobs:
-  Build And Deploy:
+  Build-And-Deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
