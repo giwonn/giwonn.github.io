@@ -32,6 +32,7 @@ jobs:
         run: yarn build
 
   Deploy:
+    needs: Build
     runs-on: ubuntu-latest
     steps:
       - name: Deploy
