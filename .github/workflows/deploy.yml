@@ -35,7 +35,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: build
-          path: ./dist
+          path: .vuepress/dist
 
   Deploy:
     needs: Build
@@ -50,4 +50,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: .vuepress/dist
