@@ -1,6 +1,6 @@
 {
   "index_name": "giwon",
-  "start_urls": ["https://giwonn.github.io/"],
+  "start_urls": ["https://giwon.dev/"],
   "stop_urls": [],
   "selectors": {
     "lvl0": {
