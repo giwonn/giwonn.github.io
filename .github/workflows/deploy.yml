@@ -32,17 +32,17 @@ jobs:
         run: yarn build
 
       - name: Upload Build Artifact
-        uses: actions/upload-artifact@v3.0.0
+        uses: actions/upload-artifact@v
         with:
           name: build
-          path: dist
+          path: ./dist
 
   Deploy:
     needs: Build
     runs-on: ubuntu-latest
     steps:
       - name: Download Build Artifact
-        uses: actions/download-artifact@v3.0.0
+        uses: actions/download-artifact@v3
         with:
           name: build
 
@@ -50,4 +50,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
+          publish_dir: ./dist
