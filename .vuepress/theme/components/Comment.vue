@@ -9,27 +9,14 @@
     reactionsEnabled="1"
     emitMetadata="0"
     inputPosition="top"
-    :theme="theme"
+    :theme="value"
     lang="en"
   />
 </template>
-<script>
-import { ref, computed } from 'vue';
+<script setup lang="ts">
+import { computed } from 'vue';
 import { Giscus } from '@giscus/vue';
 
-export default {
-  components: {
-    Giscus,
-  },
-
-  setup() {
-    const colorScheme = ref(localStorage.getItem('vuepress-color-scheme'));
-
-    const theme = computed(() => {
-      return colorScheme === 'dark' ? 'dark' : 'light';
-    });
-
-    return { theme };
-  },
-};
+const colorScheme = localStorage.getItem('vuepress-color-scheme');
+const { value } = computed(() => (colorScheme === 'dark' ? 'dark' : 'light'));
 </script>

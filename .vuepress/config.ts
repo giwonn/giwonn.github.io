@@ -1,4 +1,4 @@
-import { path } from '@vuepress/utils'
+import { path } from '@vuepress/utils';
 import getSidebar from './getSidebar';
 
 module.exports = {
@@ -22,6 +22,7 @@ module.exports = {
       '/': [''],
     },
     sidebarDepth: 1,
+    contributors: false,
   },
   plugins: [
     [
