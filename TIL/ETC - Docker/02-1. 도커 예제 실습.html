@@ -23,7 +23,7 @@
 			}
     </script>
     <title>2-1. 도커 예제 실습 | 기원's Study(ing)</title><meta name="description" content="기원이의 기술 블로그?">
-    <link rel="modulepreload" href="/assets/app.ed076908.js"><link rel="modulepreload" href="/assets/02-1. 도커 예제 실습.html.4a6bdf69.js"><link rel="modulepreload" href="/assets/02-1. 도커 예제 실습.html.f1f5b125.js"><link rel="modulepreload" href="/assets/plugin-vue_export-helper.21dcd24c.js">
+    <link rel="modulepreload" href="/assets/app.786aa9b3.js"><link rel="modulepreload" href="/assets/02-1. 도커 예제 실습.html.d031fe09.js"><link rel="modulepreload" href="/assets/02-1. 도커 예제 실습.html.cb68ef54.js"><link rel="modulepreload" href="/assets/plugin-vue_export-helper.21dcd24c.js">
     <link rel="stylesheet" href="/assets/style.e53ff2c1.css">
   </head>
   <body>
@@ -50,6 +50,6 @@ password
 --link wordpressdb:mysql
 <span class="token comment"># ...</span>
 </code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>도커 엔진은 컨테이너에게 내부 IP를 <code>172.17.0.2, 3, 4...</code>와 같이 순차적으로 할당한다.</p><p>이는 컨테이너를 시작할 때마다 재할당하는 것이므로 매번 변경되는 컨테이너의 IP로 접근하기 어렵다.</p><p><code>--link</code> 옵션은 내부 IP를 알 필요 없이 항상 컨테이너에 별명(alias)로 접근하게 해준다.</p><p>위에서 <code>wordpressdb:mysql</code>는 <code>wordpressdb</code> 컨테이너를 <code>mysql</code>이라는 이름으로 설정한다는 의미이다.</p><div class="custom-container tip"><p class="custom-container-title">TIP</p><p><code>--link</code> 옵션에 적어줄 컨테이너가 실행 중이지 않거나 존재하지 않는다면, 옵션을 적용할 컨테이너 또한 실행할 수 없다.</p><p>즉, <code>--link</code> 옵션은 <strong>컨테이너 실행 순서의 의존성도 정의해준다</strong>는 것을 알 수 있다.</p></div><!--]--></div><footer class="page-meta"><!----><div class="meta-item last-updated"><span class="meta-item-label">Last Updated: </span><!----></div><!----></footer><nav class="page-nav"><p class="inner"><span class="prev"><a href="/TIL/ETC%20-%20Docker/01.%20%EB%8F%84%EC%BB%A4%EB%9E%80.html" class="" aria-label="1. Docker란?"><!--[--><!--]--> 1. Docker란? <!--[--><!--]--></a></span><span class="next"><a href="/TIL/ETC%20-%20Docker/02-2.%20%EB%8F%84%EC%BB%A4%20%EB%B3%BC%EB%A5%A8.html" class="" aria-label="2-2. 도커 볼륨"><!--[--><!--]--> 2-2. 도커 볼륨 <!--[--><!--]--></a></span></p></nav><!--[--><!--[--><!----><!--]--><!--]--></main><!--]--></div><!----><!--]--></div>
-    <script type="module" src="/assets/app.ed076908.js" defer></script>
+    <script type="module" src="/assets/app.786aa9b3.js" defer></script>
   </body>
 </html>
