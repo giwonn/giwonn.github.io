@@ -10,7 +10,13 @@ TCP, IP 두가지의 프로토콜로 이루어져 있다.
 - 네트워크 아키텍처 : 복수의 프로토콜을 조합한 것
   (네트워크 아키텍처는 우리가 사용하는 언어에 해당한다.)
 
-현재는 TCP/IP만 거의 사용한다.
+현재는 TCP/IP만 거의 사용한다.  
+
+## TCP/IP의 주요 특징
+1. 연결형 서비스 및 비연결형 서비스 제공
+2. 패킷 교환
+3. 동적 경로 할당
+4. 공통의 응용 프로그램 제공
 
 ## TCP/IP의 계층구조
 
@@ -21,10 +27,13 @@ TCP/IP는 OSI 7계층 중 4계층으로 이루어져 있다.
 - 웹 액세스의 프로토콜 조합
   ![web-access-protocol](/images/TIL/CS-Network/web-access-protocol.jpg)
 
-### 데이터를 전송하는 역할을 하는 계층
+### 데이터링크 계층(데이터를 전송하는 역할을 하는 계층)
 
-- 네트워크 인터페이스층 : 같은 네트워크 안에서 데이터를 전송하는 층
+- **대표적 프로토콜**
+  - ARP (Address Resolution Protocol): [IP 주소 -> 물리 주소]
+  - RARP (Reverse ARP): [물리 주소 -> IP 주소]
 
+- 네트워크 인터페이스층 : 같은 네트워크 안에서 데이터를 전송하는 층  
   하나의 네트워크는 [라우터]와 [레이어2 or 3 스위치]로 구획하는 범위이다.
 
 ![network-interface-layer](/images/TIL/CS-Network/network-interface-layer.jpg)
@@ -35,29 +44,50 @@ TCP/IP는 OSI 7계층 중 4계층으로 이루어져 있다.
 
 ![end-to-end](/images/TIL/CS-Network/end-to-end.jpg)
 
-### 애플리케이션의 동작을 준비하는 계층
+### 인터넷 계층
+- 네트워크 상에서 패킷을 처리 (패킷 라우팅 등)
+- **대표적 프로토콜**
+  - IP (Internet Protocol)
+  - ICMP (Internet Control Message Protocol)
+  - IGMP (Internet Group Management Protocol)
 
-- 트랜스포트층 : 데이터를 적절한 애플리케이션에 배분하는 일을 담당
-
-  - 트랜스포트층은 TCP, UDP를 포함하는 계층이다.
+### 전송 계층 (트랜스포트층)
+- 트랜스포트층은 TCP, UDP를 포함하는 계층이다.
+- **대표적 프로토콜**
   - TCP : TCP는 데이터가 유실되더라도 그 사실을 검출해 데이터를 다시 보내준다. (엔드투엔드의 신뢰성을 확보해준다.)
+  - UDP 
 
-- 애플리케이션층 : 애플리케이션의 기능을 실행하기 위한 데이터의 형식과 처리 절차등 결정하는 것입니다.
+### 애플리케이션층
+- 애플리케이션의 기능을 실행하기 위한 데이터의 형식과 처리 절차등 결정하는 계층
+- 대표적 프로토콜
+  1. TCP 이용 : FTP, SMTP, Telnet 등
+  2. UDP 이용 : TFTP(Trivial FTP), DNS(Domain Name System), BOOTP(Bootstrap Protocol) 등
+  3. IP 직접 이용 : traceroute 프로그램
+  4. ICMP 직접 이용 : ping 프로그램
 
 ![application-layer](/images/TIL/CS-Network/application-layer.jpg)
 
+## 인터넷 주소 (Internet Address)
+- 인터넷에 연결되어 있는 호스트를 식별
+- 3가지 종류의 주소
+  1. 물리주소 : 네트워크 내에서 호스트를 식별하는 물리적 하드웨어 주소로서 네트워크 인터페이스 주소
+  2. 인터넷 주소 (IP 주소) : 서로 다른 네트워크 간에 호스트를 식별하는 논리주소
+  3. 포트 주소 : 프로세스를 식별하는 포트 번호
+
+### 포트 주소
+- 포트 번호
+  - TCP 및 UDP에 의해 응용 프로그램을 식별
+  - 2byte(16bit)로 구성
+
 ## 데이터 송수신 규칙
 
-- 헤더
-
-  각 프로토콜에는 각각의 기능을 실현하기 위한 제어 정보(**헤더**)가 필요함
-
-  - 캡슐화
-
+- 헤더 : 각 프로토콜에는 각각의 기능을 실현하기 위한 제어 정보(**헤더**)가 필요함
+  - 캡슐화 : Protocol Data Unit = Service Data Unit + Protocol Control Information
   - 역캡슐화
+    - 수신측 시스템의 해당 계층에서 수행되는 캡슐화의 반대 과정
+    - 물리 계층 이외의 모든 계층에서 수행됨
 
 - 캡슐화 순서
-
   ![capsulation-sequence](/images/TIL/CS-Network/capsulation-sequence.jpg)
 
 ### 데이터 수신, 전송할 때의 규칙
@@ -157,11 +187,11 @@ TCP/IP는 OSI 7계층 중 4계층으로 이루어져 있다.
 ## 포트 번호
 
 - 애플리케이션을 식별하는 식별 번호이다.
+- TCP 및 UDP에 의해 응용 프로그램을 식별한다.
 - 포트번호는 16비트이고, 범위는 0~65535이다.
   1. 웰노운 포트 : 서버 애플리케이션용으로 예약된 포트번호
   2. 등록된 포트 : 서버 애플리케이션을 식별하기 위한 포트번호
   3. 동적/사설 포트 : 통신할 때 동적으로 할당되는 포트번호
-
 <br>
 
 **포트 번호 범위**  
@@ -206,6 +236,25 @@ TCP/IP는 OSI 7계층 중 4계층으로 이루어져 있다.
 - 데이터를 분할하는 기준 단위는 MSS(Maximum Segment Size)라고 부른다.
 - MSS의 표준 크기는 1460byte이다.
   ![data-division](/images/TIL/CS-Network/data-division.jpg)
+
+## IP란?
+- OSI 모델의 네트워크 계층의 기능
+- 사용자에게 복잡한 인터넷 개별 네트워크 구조를 숨겨 모든 호스트들을 연결하는 1개의 가상 네트워크로 보이도록 함.
+- 네트워크 계층의 투명성을 제공함
+
+### 비연결형 서비스
+- 인터넷 계층의 투명성
+  - IP 역할 : 호스트의 주소 지정 및 데이터그램 전송
+  - 경유해야 하는 데이터 링크 및 라우터 정보를 무시
+  - 신뢰성이 없는 데이터 전송
+
+## IP 단편화
+- IP 데이터그램의 분할
+- MTU (Maximum Transfer Unit)
+  - 네트워크 링크에서 허용하는 프레임당 데이터의 최대 길이
+    - Ethernet LAN : MTU = 1500 byte
+    - CCITT X.25 : MTU = 128 byte
+- IP 데이터그램은 전송 중 각 네트워크의 MTU에 적합한 크기로 분할되었다가 목적지 호스트에서 각 fragment들을 재조립함
 
 ## UDP란?
 
