@@ -16,7 +16,7 @@
 :::
 
 ## 왜 빠를까?
-![메모리 계층구조](/images/TIL/ETC-Database/메모리-계층구조.png)  
+![메모리 계층구조](/images/TIL/CS-Database/메모리-계층구조.png)  
 인메모리 DB가 위치하는 곳은 RAM(주 기억장치)이다.
 
 디스크 기반 저장장치(HDD, SDD)는 **보조 기억 장치**라고 불린다.
@@ -43,7 +43,7 @@ In-Memory Data Grid는 여러 서버에 데이터를 분산하여 저장하는 *
 
 IMDG는 메인 메모리에 데이터를 저장한다는 점이 같을 뿐, In-Memory Database랑 아키텍처가 많이 다르다고 한다.
 
-![IMDG](/images/TIL/ETC-Database/IMDG.png)
+![IMDG](/images/TIL/CS-Database/IMDG.png)
 
 특징은 다음과 같다.
 - 다수의 컴퓨터 메모리를 클러스터링하여 하나의 큰 메모리 저장소로 구축
