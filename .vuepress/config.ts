@@ -3,7 +3,7 @@ import getSidebar from './getSidebar';
 
 module.exports = {
   title: `기원's Study(ing)`,
-  description: '기원이의 기술 블로그?',
+  description: '기술 블로그를 지향하는 곳',
   theme: path.resolve(__dirname, './theme'),
   themeConfig: {
     navbar: [

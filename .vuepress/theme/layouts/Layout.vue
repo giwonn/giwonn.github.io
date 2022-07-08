@@ -15,14 +15,14 @@ let iframe;
 
 onMounted(() => {
   iframe = document.querySelector('iframe.giscus-frame')?.contentWindow;
-  iframe && document.querySelector('.toggle-dark-button')?.addEventListener('click', changeTheme);
+  if (iframe) {
+    document.querySelector('.toggle-dark-button')?.addEventListener('click', changeTheme);
+  }
 });
 
 const changeTheme = (e) => {
-  const currentTheme = document.querySelector('HTML.dark')?.classList.contains('dark')
-    ? 'dark'
-    : 'light';
-  const setConfig = { theme: currentTheme };
+  const currentTheme = document.querySelector('HTML.dark')?.classList;
+  const setConfig = { theme: currentTheme.contains('dark') ? 'dark' : 'light' };
 
   iframe?.postMessage({ giscus: { setConfig } }, 'https://giscus.app');
 };
@@ -32,19 +32,14 @@ const changeTheme = (e) => {
 .page > .theme-default-content,
 .page-meta,
 .page-nav,
-.giscus {
+giscus-widget {
   max-width: 1200px;
 }
 
-.giscus {
+giscus-widget {
+  display: flex;
   width: auto;
   margin: 0 auto;
   padding: 2rem 2.5rem;
-
-  iframe {
-    width: 100%;
-    border-top: 1px solid var(--c-border);
-    padding-top: 1rem;
-  }
 }
 </style>
