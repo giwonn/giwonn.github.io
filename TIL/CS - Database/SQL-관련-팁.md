@@ -1,5 +1,10 @@
 # SQL 관련 팁
 
+### DISTINCT
+DISTINCT를 함수처럼 `DISTINCT(COLUMN)` 이렇게 사용하지말자.  
+`DISTINCT COLUMN` 이게 맞는 표현이다.
+
+
 ### WITH
 질의문 결과를 메모리에 임시 테이블로 저장하여, 메인 질의문이 임시 테이블을 일반 테이블처럼 사용할 수 있다.
 
@@ -12,6 +17,9 @@ TRUNCATE, DROP은 auto commit이 내포되어 있기 떄문에 실행하면 이�
 - **해결 방법**
   - INTERVAL 사용
   - TIMESTAMPDIFF() 사용
+
+### DATETIME, TIMESTAMP
+DATETIME은 TIMESTAMP에 비해 데이터를 1바이트 덜 사용하지만, 조회 시 데이터를 변환하므로 TIMESTAMP를 사용하자.
 
 
 ### TOP-N QUERY 주의점
