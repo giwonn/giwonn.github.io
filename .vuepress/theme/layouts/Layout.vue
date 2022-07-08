@@ -1,5 +1,8 @@
 <template>
   <ParentLayout>
+    <template #page-top>
+      <TOC />
+    </template>
     <template #page-bottom>
       <Comment />
     </template>
@@ -9,6 +12,7 @@
 <script setup lang="ts">
 import ParentLayout from '@vuepress/theme-default/lib/client/layouts/Layout.vue';
 import Comment from '../components/Comment.vue';
+import TOC from '../components/TOC.vue';
 import { onMounted } from 'vue';
 
 let iframe;
