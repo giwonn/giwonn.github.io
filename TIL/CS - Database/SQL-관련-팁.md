@@ -36,3 +36,7 @@ DATE, TIME, DATETIME은 global time zone 시간으로 저장하고 검색함
 ### NULL 처리 함수
 COALESCE()가 표준함수다. MYSQL의 NULLIF나 NVL은 비표준함수이므로 사용을 지양하자.
 
+### JOIN
+- a.id = b.id와 같은 조건을 표현하려면 JOIN 뒤에 `USING(id)`만 붙여줘도 충분하다.
+- 그 외의 조건식은 ON 절을 사용하는게 좋을듯
+- WHERE절 join === FROM절 조인의 ON 절과 동일한 출력 결과를 가짐
