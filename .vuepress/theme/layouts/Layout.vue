@@ -1,8 +1,5 @@
 <template>
   <ParentLayout>
-    <template #page-top>
-      <TOC />
-    </template>
     <template #page-bottom>
       <Comment />
     </template>
