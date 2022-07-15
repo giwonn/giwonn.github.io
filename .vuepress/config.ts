@@ -4,6 +4,7 @@ import getSidebar from './getSidebar';
 module.exports = {
   title: `기원's Study(ing)`,
   description: '기술 블로그를 지향하는 곳',
+  cache: path.resolve(__dirname, './.cache'),
   theme: path.resolve(__dirname, './theme'),
   themeConfig: {
     navbar: [

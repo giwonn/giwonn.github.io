@@ -14,8 +14,9 @@
   />
 </template>
 <script setup lang="ts">
-import { computed } from 'vue';
-// import Giscus from '@giscus/vue';
+import { computed, onMounted, defineAsyncComponent, watch } from 'vue';
+import Giscus from '@giscus/vue';
+
 
 const colorScheme = localStorage.getItem('vuepress-color-scheme');
 const { value } = computed(() => (colorScheme === 'dark' ? 'dark' : 'light'));

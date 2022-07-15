@@ -11,19 +11,18 @@ import ParentLayout from '@vuepress/theme-default/lib/client/layouts/Layout.vue'
 import Comment from '../components/Comment.vue';
 import TOC from '../components/TOC.vue';
 import { onMounted } from 'vue';
+import { GiscusProps } from '@giscus/vue';
 
 onMounted(() => {
-  const giscusWidget = document.querySelector<HTMLIFrameElement>('iframe.giscus-widget');
+  const giscusWidget = document.querySelector<HTMLIFrameElement>('iframe.giscus-frame');
   if (!giscusWidget) return;
+
   document.querySelector('.toggle-dark-button')?.addEventListener('click', () => {
-
-  const currentTheme = document.querySelector('HTML.dark')?.classList;
-  const setConfig = { theme: currentTheme.contains('dark') ? 'dark' : 'light' };
-
-  giscusWidget.contentWindow.postMessage({ setConfig }, 'https://giscus.app');
+    const currentTheme = document.querySelector('HTML.dark')?.classList;
+    const setConfig: Partial<GiscusProps> = { theme: currentTheme?.contains('dark') ? 'dark' : 'light' };
+    giscusWidget.contentWindow.postMessage({ giscus: setConfig }, 'https://giscus.app');
   });
 });
-
 </script>
 
 <style lang="scss">
