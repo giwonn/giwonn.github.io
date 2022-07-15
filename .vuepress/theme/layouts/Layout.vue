@@ -20,9 +20,15 @@ onMounted(() => {
   document.querySelector('.toggle-dark-button')?.addEventListener('click', () => {
     const currentTheme = document.querySelector('HTML.dark')?.classList;
     const setConfig: Partial<GiscusProps> = { theme: currentTheme?.contains('dark') ? 'dark' : 'light' };
-    giscusWidget.contentWindow.postMessage({ giscus: setConfig }, 'https://giscus.app');
+    sendMessage({ setConfig })
   });
 });
+
+const sendMessage = <T>(message: T) => {
+  const giscusWidget = document.querySelector<HTMLIFrameElement>('iframe.giscus-frame');
+  if (!giscusWidget) return;
+  giscusWidget.contentWindow.postMessage({giscus: message}, 'https://giscus.app');
+}
 </script>
 
 <style lang="scss">
