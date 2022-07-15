@@ -15,10 +15,9 @@ import { onMounted } from 'vue';
 let giscusWidget;
 
 onMounted(() => {
-  giscusWidget = document.querySelector('giscus-widget');
-  if (giscusWidget) {
-    document.querySelector('.toggle-dark-button')?.addEventListener('click', changeTheme);
-  }
+  giscusWidget = document.querySelector<HTMLIFrameElement>('iframe.giscus-widget');
+  if (!giscusWidget) return;
+  document.querySelector('.toggle-dark-button')?.addEventListener('click', changeTheme);
 });
 
 const changeTheme = (e) => {
