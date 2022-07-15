@@ -12,11 +12,11 @@ import Comment from '../components/Comment.vue';
 import TOC from '../components/TOC.vue';
 import { onMounted } from 'vue';
 
-let iframe;
+let giscusWidget;
 
 onMounted(() => {
-  iframe = document.querySelector('iframe.giscus-frame')?.contentWindow;
-  if (iframe) {
+  giscusWidget = document.querySelector('giscus-widget');
+  if (giscusWidget) {
     document.querySelector('.toggle-dark-button')?.addEventListener('click', changeTheme);
   }
 });
@@ -25,7 +25,7 @@ const changeTheme = (e) => {
   const currentTheme = document.querySelector('HTML.dark')?.classList;
   const setConfig = { theme: currentTheme.contains('dark') ? 'dark' : 'light' };
 
-  iframe?.postMessage({ giscus: { setConfig } }, 'https://giscus.app');
+  giscusWidget?.postMessage({ giscus: { setConfig } }, 'https://giscus.app');
 };
 </script>
 
