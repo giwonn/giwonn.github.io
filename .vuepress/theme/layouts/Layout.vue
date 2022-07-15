@@ -12,20 +12,18 @@ import Comment from '../components/Comment.vue';
 import TOC from '../components/TOC.vue';
 import { onMounted } from 'vue';
 
-let giscusWidget;
-
 onMounted(() => {
-  giscusWidget = document.querySelector<HTMLIFrameElement>('iframe.giscus-widget');
+  const giscusWidget = document.querySelector<HTMLIFrameElement>('iframe.giscus-widget');
   if (!giscusWidget) return;
-  document.querySelector('.toggle-dark-button')?.addEventListener('click', changeTheme);
-});
+  document.querySelector('.toggle-dark-button')?.addEventListener('click', () => {
 
-const changeTheme = (e) => {
   const currentTheme = document.querySelector('HTML.dark')?.classList;
   const setConfig = { theme: currentTheme.contains('dark') ? 'dark' : 'light' };
 
-  giscusWidget?.postMessage({ giscus: { setConfig } }, 'https://giscus.app');
-};
+  giscusWidget.contentWindow.postMessage({ setConfig }, 'https://giscus.app');
+  });
+});
+
 </script>
 
 <style lang="scss">
