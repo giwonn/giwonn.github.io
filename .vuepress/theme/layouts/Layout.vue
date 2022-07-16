@@ -1,5 +1,8 @@
 <template>
   <ParentLayout>
+<!--    <template #page-right>-->
+<!--      <TOC />-->
+<!--    </template>-->
     <template #page-bottom>
       <Comment />
     </template>
@@ -10,7 +13,7 @@
 import ParentLayout from '@vuepress/theme-default/lib/client/layouts/Layout.vue';
 import Comment from '../components/Comment.vue';
 import TOC from '../components/TOC.vue';
-import { onMounted, watch } from 'vue';
+import { onMounted } from 'vue';
 import { GiscusProps } from '@giscus/vue';
 
 onMounted(() => {
