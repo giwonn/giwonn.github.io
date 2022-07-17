@@ -1,8 +1,8 @@
 <template>
   <ParentLayout>
-<!--    <template #page-right>-->
-<!--      <TOC />-->
-<!--    </template>-->
+    <template #page-top>
+      <TOC style="position: fixed; width:300px; outline: 1px solid black"/>
+    </template>
     <template #page-bottom>
       <Comment />
     </template>
