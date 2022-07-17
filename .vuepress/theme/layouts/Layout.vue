@@ -1,8 +1,8 @@
 <template>
   <ParentLayout>
-    <template #page-top>
-      <TOC style="position: fixed; width:300px; outline: 1px solid black"/>
-    </template>
+    <!--    <template #page-top>-->
+    <!--      <TOC style="position: fixed; width:300px; outline: 1px solid black"/>-->
+    <!--    </template>-->
     <template #page-bottom>
       <Comment />
     </template>
@@ -32,11 +32,11 @@ const sendMessage = (theme: string) => {
 </script>
 
 <style lang="scss">
-.page > .theme-default-content,
-.page-meta,
-.page-nav,
+//.page > .theme-default-content,
+//.page-meta,
+//.page-nav,
 giscus-widget {
-  max-width: 1200px;
+  max-width: 740px;
 }
 
 giscus-widget {
