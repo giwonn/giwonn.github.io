@@ -55,3 +55,31 @@ COALESCE()가 표준함수다. MYSQL의 NULLIF나 NVL은 비표준함수이므�
 - **where절 서브쿼리**는 메인쿼리의 튜플을 필터링하기 위해서 사용함
 - **연관 서브쿼리**는 메인쿼리의 테이블을 서브쿼리에서 조건이 맞는지 확인할 때 사용함
 - **비연관 서브쿼리**는 메인쿼리에 값을 제공하기 위해서 사용함
+
+### CASCADE, RESTRICT
+- CASCADE를 연쇄적으로 걸어놓았을 때, 삭제되는 중간에 RESTRICT에 의해서 거부될 경우 모든 삭제가 거부된다. (승인된 부모들의 삭제 또한 거부됨)
+- FK에 CASCADE가 선언되었으면, 다른 쪽 테이블에도 동시에 CASCADE가 선언되어야함
+- 안전한 모드로 주로 `ON DELETE RESTRICT`, `ON UPDATE CASCADE`를 건다. (삭제 거부, 수정 허용)
+- `ON DELETE SET NULL`, `ON DELETE SET DEFAULT` 사용 시, 부모 튜플 삭제 시 자식 튜플은 NULL 혹은 DEFAULT로 존재.
+- ON DELETE SET NULL 사용 시, FK에 NOT NULL이 선언될 수 없다.
+
+### VIEW
+- 뷰는 기본 테이블로부터 유도된 가상 테이블임
+- SELECT문을 사용하여 정의함
+- 뷰는 검색 요청 시 결과가 동적으로 생성됨
+
+### VIEW - DROP
+```
+DROP VIEW view이름 [RESTRICT | CASCADE]
+```  
+- RESTRICT : 제거하려는 뷰를 이용한 다른 뷰가 정의되어 있으면 실행을 거부함
+- CASCADE : 제거하려는 뷰를 이용한 다른 뷰가 있으면 함께 삭제함
+
+### 수정 불가능한 뷰
+- 집단 함수
+- DISTINCT
+- GROUP BY
+- HAVING
+- UNION
+- 스칼라 서브쿼리 (SELECT절 서브쿼리)
+- 일부 조인 연산
