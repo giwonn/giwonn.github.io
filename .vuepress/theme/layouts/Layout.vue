@@ -32,9 +32,9 @@ const sendMessage = (theme: string) => {
 </script>
 
 <style lang="scss">
-//.page > .theme-default-content,
-//.page-meta,
-//.page-nav,
+// .page > .theme-default-content,
+// .page-meta,
+// .page-nav,
 giscus-widget {
   max-width: 740px;
 }
