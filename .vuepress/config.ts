@@ -14,13 +14,11 @@ export default defineUserConfig({
       { text: 'TIL', link: '/TIL/' },
       { text: '알고리즘', link: '/algorithm/' },
       { text: 'Book', link: '/book/' },
-      { text: '개발노트', link: '/devnote/' },
       { text: 'GitHub', link: 'https://github.com/giwonn' },
     ],
     sidebar: {
       '/TIL/': getSidebar('TIL'),
       '/book/': getSidebar('book'),
-      '/devnote/': getSidebar('devnote'),
       '/algorithm/': getSidebar('algorithm'),
       '/': [''],
     },
